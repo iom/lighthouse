@@ -1,0 +1,207 @@
+/*** Dashboard *********************************/
+
+/* .screen-warning {
+    display: none;
+    padding: 1em;
+    font-size: .8em;
+    text-align: center;
+    color: var(--blue3);
+    font-style: italic;
+}
+
+.download {
+    padding: 1em;
+    font-size: .8em;
+    text-align: right;
+    color: var(--blue3);
+} */
+
+/* @media (max-width: 600px) {
+    .screen-warning {
+        display: block;
+    }
+} */
+
+/* .dashboard-container {
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+} */
+
+#form-inset-container {
+
+    @media (width < 778px) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+
+
+/*** Legend ************************************/
+  
+.legend-text {
+    fill: var(--blue2);
+    font-size: 11px;
+}
+  
+.legend-desc {
+    fill: var(--blue2);
+    font-size: 10px;
+}
+  
+.legend-desc-bold {
+    fill: var(--blue1);
+    font-weight: bold;
+    font-size: 12px;
+}
+  
+.legend-bubble-line {
+    fill: none;
+    stroke: black;
+    stroke-width: .8;
+    stroke-dasharray: 2,2;
+}
+  
+.legend-bubble-circle {
+    fill: black;
+    fill-opacity: .1;
+    stroke: black;
+    stroke-width: .75;
+    stroke-opacity: .3;
+}
+  
+/*** Tooltip ***********************************/
+  
+.tooltip {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: .2em .5em .3em .5em;
+}
+  
+.tooltip p {
+    opacity: 1;
+    font-family: var(--font), sans-serif;
+    font-size: 14px;
+    line-height: 1.3em;
+    margin: 0 0 0 0;
+}
+  
+.tooltip .tooltip-emph {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--blue2);
+}
+  
+.tooltip p.tooltip-note {
+    font-size: 11px;
+    margin-top: 5px;
+    color: var(--gray2);
+}
+
+/*** Map ***************************************/
+
+
+
+/*** Boxplot ***********************************/
+
+/* .boxplot {
+    display: flex;
+    flex-direction: row; */
+    /* height: auto; */
+    /* gap: 0; */
+
+    /* @media (width < 700px) {
+        flex-direction: column;
+
+        & .sidebar { order: 2; }
+    } */
+
+    /* & .sidebar {
+        display: flex;
+        flex-direction: column;
+        background: var(--unBlue6);
+
+        @media (width < 700px) {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+    } */
+
+    /* & .graphic-area {
+        width: 100%;
+        height: auto;
+    }
+
+    & #bar-dropdown-region select {
+        width: 200px;
+    } */
+
+
+/* } */
+
+.x-axis text, .y-axis text {
+    font-family: "Open Sans", var(--sans-serif);
+    font-size: 14px;
+    fill: var(--blue2);
+}
+
+.y-axis :first-child {
+    font-style: italic;
+}
+
+.bin-range-50 {
+    fill: var(--unBlue3);
+    stroke: var(--blue5);
+    stroke-width: 1px;
+}
+
+.bin-range-50 #bin-range-50-10 {
+    fill: var(--green3);
+    stroke: var(--green5);
+    stroke-width: 1px;
+}
+
+.bin-range-90 {
+    stroke: var(--blue3);
+    stroke-width: 3px;
+}
+
+.bin-range-90 #bin-range-90-10 {
+    stroke: var(--green2);
+    stroke-width: 3px;
+}
+
+.bin-range-med {
+    stroke: var(--blue2);
+    stroke-width: 5px;
+}
+
+.bin-range-med #bin-range-med-10 {
+    stroke: var(--green1);
+    stroke-width: 5px;
+}
+
+.marker-line {
+    pointer-events: none;
+    stroke: black;
+    stroke-width: .5px;
+    stroke-dasharray: 3,3;
+}
+
+#marker-num {
+    font-size: 12px;
+    position: absolute;
+    z-index: 999;
+    width: auto;
+    height: auto;
+}
+
+
+
+/* .legend-container {
+    position: absolute;
+
+
+} */

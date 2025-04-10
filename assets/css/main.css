@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+:root {
+    --font: "Open Sans";
+    --width-form: 160px;
+    --width-chart: 950px;
+    --height-chart: 500px;
+
+    /* Colors */
+    --blue1: #0033A0; 
+    --blue2: #4068B8; 
+    --blue3: #8099D0; 
+    --blue4: #B3C2E3; 
+    --blue5: #D9E0F1; 
+    --green1: #5CB8B2;  
+    --green2: #85CAC5; 
+    --green3: #AEDCD9; 
+    --green4: #CEEAE8;
+    --green5: #E7F4F3; 
+    --yellow: #FFB81C; 
+    --brown1: hsl(27, 57%, 55%); 
+    --brown2: hsl(27, 57%, 65%); 
+    --brown3: hsl(27, 57%, 75%); 
+    --brown4: hsl(27, 57%, 85%); 
+    --brown5: hsl(27, 57%, 95%); 
+    --red1: #D22630; 
+    --red2: #DD5C64; 
+    --red3: #E99398; 
+    --red4: #F2BEC1; 
+    --red5: #F8DEE0; 
+    --unBlue1: #418FDE; 
+    --unBlue2: #84ADEC; 
+    --unBlue3: #ADC9F2; 
+    --unBlue4: #CEDEF7; 
+    --unBlue5: #E6EFFB; 
+    --unBlue6: #F3F7FD; 
+    --gray1: hsl(0, 0%, 25%); 
+    --gray2: hsl(0, 0%, 40%); 
+    --gray3: hsl(0, 0%, 60%); 
+    --gray4: hsl(0, 0%, 80%); 
+    --gray5: hsl(0, 0%, 90%); 
+    --gray6: hsl(0, 0%, 95%); 
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    font: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font), sans-serif;
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-size: clamp(2rem, 1rem + 4vw, 3rem);
+    font-weight: 600;
+    line-height: 1.2em;
+    margin: .25rem 0 1rem 0;
+}
+
+h2, .methodology {
+    font-size: 1rem;
+    font-size: clamp(1rem, .8rem + .8vw, 2rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 600;
+    margin: .5rem 0;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+strong {
+    color: var(--blue1);
+    font-weight: 700;
+}
+
+svg {
+    display: block;
+}
+
+.disclaimer {
+    display: flex;
+    margin: auto;
+    color: var(--red1);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+}
+
+/*** Header and footer *************************/
+
+header {
+    display: flex;
+    padding: min(3vw, 1rem) min(10vw, 5rem);
+}
+
+.logo-container img {
+    width: min(60vw, 295px);
+    height: auto;
+}
+
+footer {
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 3rem 3rem 2rem 3rem;
+    margin-top: 3rem;
+}
+
+.copyright {
+    flex: 0 1 0px;
+    font-size: 0.825rem;
+    font-size: clamp(.6rem, .375rem + .9vw, 0.825rem);
+    color: var(--gray2);
+}
+
+/*** Layout ************************************/
+
+.content-grid, .full-width {
+    --padding-inline: 2rem;
+    --content-max-width: 700px;
+    --breakout-max-width: 950px;
+    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+    display: grid;
+    gap: 0;
+    grid-template-columns: 
+        [full-width-start] minmax(var(--padding-inline), 1fr)
+        [breakout-start] minmax(0, var(--breakout-size))
+        [content-start] min(100% - (var(--padding-inline) * 2), var(--content-max-width)) [content-end] 
+        minmax(0, var(--breakout-size)) [breakout-end] 
+        minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+    grid-column: content;
+}
+
+.content-grid > .breakout,
+.full-width > .breakout {
+    grid-column: breakout;
+
+    @media (width < 950px) {
+        grid-column: full-width;
+    }
+}
+
+.content-grid > .full-width {
+    grid-column: full-width;
+    display: grid;
+    grid-template-columns: inherit;
+}
+
+/*** Title *************************************/
+
+.title-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--blue1);
+    color: white; 
+    margin-bottom: 2rem;
+}
+
+.title-block-contents {
+    text-align: center;
+    /* max-width: 50rem; */
+    padding: 2em 1em;
+
+    .product-name {
+        font-weight: 600;
+        font-size: .7rem;
+        text-transform: uppercase;
+        opacity: .8;
+        padding: .1rem .5rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
+    }
+}
+
+/*** Page **************************************/
+
+.chart {
+    position: relative;
+
+    & .fig-title {
+        position: absolute;
+        top: 1em;
+        left: 1em;
+
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+
+    --color-arrow: var(--blue2);
+    --show-grid: none;
+    /* --show-grid: unset; */
+
+    & .panel {
+        background: var(--unBlue6);
+    }
+
+    & .grid {
+        display: var(--show-grid);
+        stroke: lightgray;
+        stroke-opacity: .7;
+        font-size: .75em;
+        color: lightgray;
+    }
+
+    & .land {
+        fill: var(--brown5);
+        fill: var(--gray5);
+        stroke: white;
+        stroke-width: 2px;
+    }
+
+    & #arrow {
+        fill: var(--color-arrow);
+    }
+
+    & .flow {
+        fill: none;
+        stroke: var(--color-arrow);
+        stroke-width: 20px;
+    }
+
+
+}
+
+
+#fig1 {
+
+    & .VEN {
+        fill: var(--unBlue3);
+    }
+
+    & .MEX, & .HND, & .COL, & .PAN {
+        fill: var(--brown4);
+    }
+}
+
+#fig2 {
+
+    & .VEN {
+        fill: var(--unBlue3);
+    }
+
+    & .MEX, & .HND, & .COL, & .PAN {
+        fill: var(--brown4);
+    }
+
+    & .bubble {
+        fill: var(--red2);
+        fill-opacity: .7;
+        stroke: white;
+        stroke-width: 3px;
+    }
+}
+

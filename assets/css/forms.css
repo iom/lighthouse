@@ -1,0 +1,119 @@
+
+/*** Forms *************************************/
+
+/*** form-inset ***/
+
+#form-inset-container {
+  /* position: absolute;
+  top: 10px;
+  left: 10px;
+  text-align: left;
+  width: var(--width-form);
+  height: auto;
+  padding: .8rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: .8rem; */
+
+  @media (width < 778px) {
+    /* position: relative; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    gap: 0;
+  }
+
+  & .form-title-desc {
+
+    @media (width < 778px) {
+      width: 8rem;
+    }
+  }
+
+  & form {
+    /* z-index: 1; */
+
+    & .options {
+      /* display: flex;
+      flex-direction: column;
+      flex-wrap: wrap; */
+  
+      /* @media (width < 778px) {
+        height: 90px;
+  
+        & label {
+          font-size: 11px;
+        }
+      }
+    } */
+
+
+  }
+
+  /* & .form-inset-bg {
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: .6;
+    z-index: 0;
+  } */
+  
+}
+
+
+
+#form-inset-container form {
+  /* display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-self: start;
+  max-width: 100%; */
+  /* padding: 10px 10px 5px 15px; */
+
+  /* @media (width < 778px) {
+    flex-direction: row;
+    gap: .5rem;
+  } */
+}
+
+/* rect#form-inset-bg {
+  x: 10;
+  y: 10;
+  width: 165px;
+  height: 335px;
+  fill: white;
+  fill-opacity: .60;
+} */
+
+/* #form-inset-container input#form-number {
+  font-size: 14px;
+  width: 60px;
+} */
+
+/* #form-inset-container #bar-dropdown-region select {
+  width: 150px;
+} */
+
+
+
+/* #form-inset-container form > label {
+  flex-shrink: 0;
+  align-self: start;
+  padding: 5px 0 4px 0;
+  margin-right: 6.5px;
+} */
+
+/* #form-inset-container form div label, .form-label {
+  display: flex;
+  align-items: center;
+  color: var(--blue1);
+  fill: var(--blue1);
+  font-size: 13px;
+  margin-bottom: 0px;
+} */
+
+/* #form-inset-container input {
+  margin-right: 8px;
+} */
