@@ -79,10 +79,9 @@ export function addFormIcons(form) {
     const params = { pad: 75, radius: 15 };
 
     const iconsData = [
-        { i: 1, src: "regin",   lab1: "Regular",   lab2: "entries" },
-        { i: 2, src: "regout",  lab1: "Regular",   lab2: "exits"   },
-        { i: 3, src: "netflow", lab1: "Net",       lab2: "flow"    },
-        { i: 4, src: "irreg",   lab1: "Irregular", lab2: "entries" }
+        { i: 1, src: "regin",  lab1: "Regular",   lab2: "entries"  },
+        { i: 2, src: "regout", lab1: "Regular",   lab2: "exits"    },
+        { i: 3, src: "irreg",  lab1: "Irregular", lab2: "entries"  }
     ];
     
     iconsData.forEach(d => {

@@ -3,7 +3,7 @@
 :root {
     --font: "Open Sans";
     --width-form: 160px;
-    --width-chart: 950px;
+    --width-chart: 1200px;
     --height-chart: 500px;
 
     /* Colors */
@@ -130,7 +130,7 @@ footer {
 .content-grid, .full-width {
     --padding-inline: 2rem;
     --content-max-width: 700px;
-    --breakout-max-width: 950px;
+    --breakout-max-width: var(--width-chart);
     --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
 
     display: grid;
@@ -152,7 +152,7 @@ footer {
 .full-width > .breakout {
     grid-column: breakout;
 
-    @media (width < 950px) {
+    @media (width < 1200px) {
         grid-column: full-width;
     }
 }

@@ -48,12 +48,14 @@
 
     & .topbar {
         display: flex;
-        justify-content: space-between;
         background: var(--unBlue5);
+        padding: 0 2em;
+        gap: 5em;
 
-        @media (width < 531px) { 
+        @media (width < 676px) { 
             /* tabs move up */
             flex-wrap: wrap;
+            gap: 0;
         }
 
         /* Tabs */
@@ -64,32 +66,36 @@
             font-size: 0.8em;
             cursor: pointer;
             text-transform: uppercase;
-
+           
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
+            gap: 1em;
             flex-wrap: wrap;
             margin: auto 0;
         
-            @media (width < 531px) { 
+            @media (width < 676px) { 
                 /* Breakpoint when tabs + form-icons don't fit */
                 flex-direction: row;
                 margin: 0 auto .25rem auto;
+                padding: .5em 0;
+                gap: .5em;
             }
         
             & .tab { 
                 width: auto;
                 padding: .25rem .5rem; 
-                background: var(--unBlue4);
-                color: var(--blue2);
-                opacity: .5;
+                background: var(--unBlue3);
+                color: var(--blue1);
+                opacity: .75;
+                border-radius: .5em;
         
                 &:hover {
-                    background-color: var(--unBlue3);
-                    opacity: .5;
+                    background-color: var(--unBlue4);
+                    opacity: .75;
                     transform: scale(1.025);
                     transition: 
-                        background-color .1s ease-in-out,
-                        scale .1s ease-in-out;
+                        background-color .2s ease-in-out,
+                        scale .2s ease-in-out;
                 }
         
                 &.active { 
@@ -97,7 +103,7 @@
                     opacity: 1;
                     color: white; 
                     font-weight: bold;
-                    transition: background .1s ease-in-out;
+                    transition: background .2s ease-in-out;
                 }
             }
         }
@@ -108,9 +114,8 @@
             width: auto;
             height: auto;
             display: flex;
-            margin: 0 auto;
             
-            @media (width < 531px) { 
+            @media (width < 676px) { 
                 /* tabs move to the top */
                 width: 100%;
                 justify-content: center;
@@ -131,7 +136,7 @@
         
                 max-width: 7rem;
 
-                @media (width < 531px) { 
+                @media (width < 676px) { 
                     /* tabs move to the top */
                     max-width: 10rem;
                 }
@@ -204,7 +209,7 @@
                         font-size: .7rem;
                         color: var(--blue3);
                         text-align: center;
-                        line-height: 1.1em;
+                        line-height: 1.2;
                     }
         
                     &:not(.icon-clicked):hover .icon-label {
@@ -354,6 +359,20 @@
             stroke: var(--blue3);
             stroke-width: .5;
             filter: drop-shadow(0 0 5px var(--unBlue3));
+        }
+
+        & .unknown {
+            & .unknown-rect {
+                fill: var(--unBlue5);
+                fill-opacity: .7;
+                stroke: var(--blue3);
+                stroke-width: .5;
+            }
+
+            & .unknown-text {
+                font-size: .7em;
+                fill: var(--unBlue2);
+            }
         }
           
         & .border {

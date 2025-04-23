@@ -1,6 +1,6 @@
 
 export const dim = { 
-    width: 950, 
+    width: 1200, 
     height: 500,
 };
 
@@ -47,117 +47,6 @@ export const geos = {
     "PAN": "Panama",
     "PER": "Peru"
 }
-
-// export const types = {
-//     1: "Conflict",
-//     2: "Drought",
-//     3: "Earthquake",
-//     4: "Flood",
-//     5: "Mass movement",
-//     6: "Storm",
-//     7: "Wildfire",
-//     8: "Other"
-// };
-
-// export const indicators = {
-//     1: "Female",
-//     2: "Median age",
-//     3: "Children",
-//     4: "Income",
-//     5: "Years of schooling",
-//     6: "Life expectancy",
-//     7: "Urban area",
-//     8: "Cropland area",
-//     9: "Grazing area",
-// };
-
-// export const indicatorsTooltip = {
-//     1: " of people in this area are female",
-//     2: " years is the median age of people in this area",
-//     3: " of people in this area have ages below 18",
-//     4: " is the per capita income in this area",
-//     5: " years is the average schooling of people in this area",
-//     6: " years is the life expectancy of people in this area",
-//     7: " is the urban share of this area",
-//     8: " is the share of croplands in this area",
-//     9: " is the share of grazing lands in this area"
-// };
-
-// export const regions = {
-//     0: "World",
-//     1: "Central and Southern Asia",
-//     2: "Eastern and Southeastern Asia",
-//     3: "Europe",
-//     4: "Latin America and the Caribbean",
-//     5: "Northern Africa and Western Asia",
-//     6: "Northern America",
-//     7: "Oceania",
-//     8: "Sub-Saharan Africa"
-// }
-
-// export const typesBar = {
-//     "0": "All causes",
-//     "1": "Conflict",
-//     "2": "Drought",
-//     "3": "Earthquake",
-//     "4": "Extreme temperature",
-//     "5": "Flood",
-//     "6": "Mass movement",
-//     "7": "Storm",
-//     "8": "Weather disaster",
-//     "9": "Wildfire",
-//     "10": "Total population in region"
-// };
-
-// export const indicatorsBar = {
-//     1: "Female",
-//     2: "Median age",
-//     3: "Children",
-//     4: "Income",
-//     5: "Years of schooling",
-//     6: "Life expectancy",
-//     7: "Urban area",
-//     8: "Cropland area",
-//     9: "Grazing area"
-// };
-
-// export const indicatorsBarTooltip = {
-//     1: "the median female share",
-//     2: "the median age",
-//     3: "the median share of under age 18",
-//     4: "median per capita income",
-//     5: "the median average years of schooling",
-//     6: "median life expectancy",
-//     7: "the median urban share",
-//     8: "the median cropland area share",
-//     9: "the median grazing area share"
-// };
-
-// export const indicatorsTitle = {
-//     1: "median female share",
-//     2: "median age",
-//     3: "median share of under age 18",
-//     4: "median per capita income",
-//     5: "median average years of schooling",
-//     6: "median life expectancy",
-//     7: "median urban share",
-//     8: "median cropland area share",
-//     9: "median grazing area share"
-// };
-
-// export const indicatorsAxis = {
-//     1: "Median female share",
-//     2: "Median age",
-//     3: "Median share of under age 18",
-//     4: "Median per capita income",
-//     5: "Median average years of schooling",
-//     6: "Median life expectancy",
-//     7: "Median urban share",
-//     8: "Median cropland area share",
-//     9: "Median grazing area share"
-// };
-
-// export function formatNum(num) d3.format(",.0f")(num);
 
 export function formatNumAxis(num) {
     let numFormat;
