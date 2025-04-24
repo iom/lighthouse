@@ -22,31 +22,33 @@ function drawGrid(series) {
     const panel = mainview.append("div")
         .attr("class", "panel");
 
-    // const dim = { width: 750, height: 500 };
-    // const margin = { top: 20, bottom: 80, right: 20, left: 190 };
-    // const gutter = { yout: 12.5, yin: 30, xin: 7.5, xout: 12.5 };
-
     // Forms ////////////////////////////////////
 
     const formGeo = sidebar.call(forms.addFormDropdown);
-    // d3.selectAll("#dropdown-geo").on("input", update);
-
-    let geoSelect = formGeo.select("#dropdown-geo select").property("value");
+    d3.selectAll("#dropdown-geo").on("input", update);
 
     const grid = panel.append("div")
         .attr("class", "grid");
     
-    let dataGeo = series.filter(d => d.geo == geoSelect);
-
     const regularEntries = grid.append("div").attr("class", "grid-cell");
     const regularExits = grid.append("div").attr("class", "grid-cell");
     const netFlow = grid.append("div").attr("class", "grid-cell");
     const irregular = grid.append("div").attr("class", "grid-cell");
+        
+    function update() {
 
-    regularEntries.call(drawRegularEntries, dataGeo);
-    regularExits.call(drawRegularEntries, dataGeo);
-    netFlow.call(drawRegularEntries, dataGeo);
-    irregular.call(drawRegularEntries, dataGeo);
+        // d3.selectAll("grid-cell").select("svg").remove();
+        
+        let geoSelect = formGeo.select("#dropdown-geo select").property("value");
+        let dataGeo = series.filter(d => d.geo == geoSelect);
+        
+        regularEntries.call(drawLine, dataGeo, "regin", "Regular entries");
+        regularExits.call(drawLine, dataGeo, "regout", "Regular exits");
+        netFlow.call(drawBar, series, dataGeo);
+        irregular.call(drawLine, dataGeo, "irreg", "Irregular entries");
+    }
+
+    update();
 }
 
 const dim = { width: 467, height: 220 };
@@ -114,26 +116,27 @@ function addAxes(panel, xScale, yScale) {
         .call(yGrid);
 }
 
+function drawLine(container, dataGeo, varSelect, title) {
 
-function drawRegularEntries(container, dataGeo) {
-
-    let data = dataGeo.filter(d => d.var == "regin");
+    let data = dataGeo.filter(d => d.var == varSelect);
     data.sort((a, b) => d3.ascending(util.parseDate(a.t), util.parseDate(b.t)));
 
     const X = d3.map(data, d => util.parseDate(d.t));
     const Y = d3.map(data, d => +d.n);
     const Z = d3.map(data, d => d.var);
     const I = d3.range(X.length);
+    const xValues = [...new Set(X)];
 
     const y = d3.scaleLinear()
         .domain([d3.min(data, d => +d.n), d3.max(data, d => +d.n)])
         .range([dim.height - margin.bottom - gutter.x, margin.top + gutter.x]);
 
+    container.select("svg").remove();
     const svg = container.append("svg")
         .attr("width", "100%")
         .attr("viewBox", [0, 0, dim.width, dim.height]);
     
-    svg.append("rect")
+    const panel = svg.append("rect")
         .attr("x", margin.left).attr("y", margin.top)
         .attr("width", dim.width - margin.left - margin.right)
         .attr("height", dim.height - margin.top - margin.bottom)
@@ -143,7 +146,7 @@ function drawRegularEntries(container, dataGeo) {
         .attr("class", "grid-cell-title")
         .attr("x", dim.width / 2)
         .attr("y", margin.top / 2)
-        .text("Regular entries");
+        .text(title);
 
     svg.call(addAxes, x, y);
 
@@ -159,7 +162,7 @@ function drawRegularEntries(container, dataGeo) {
         .attr("class", "chart-line")
         .attr("d", ([, I]) => line(I));
 
-    svg.append("g")
+    const dots = svg.append("g")
         .selectAll("circle")
         .data(data)
         .join("circle")
@@ -167,4 +170,110 @@ function drawRegularEntries(container, dataGeo) {
         .attr("cx", d => x(util.parseDate(d.t)))
         .attr("cy", d => y(d.n))
         .attr("r", 2);
+    
+    // Hover ////////////////
+
+    const marker = svg.append("g").attr("display", "none")
+    marker.append("path")
+        .attr("class", "marker")
+        .attr("d", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]))
+    
+    panel.on("mouseenter", mouseentered)
+        .on("mousemove", mousemoved)
+        .on("mouseleave", mouseleft);
+
+    function mouseentered() {
+        marker.attr("display", null);
+        d3.select("#tooltip").style("display", "block");
+    }
+        
+    function mousemoved(event) {
+        const [xm, ym] = d3.pointer(event);
+        const xValue = d3.least(xValues, u => Math.abs(x(u) - xm));
+        const i = X.map((d, i) => d.getTime() === xValue.getTime() ? i : "").filter(String);
+        marker.attr("transform", `translate(${ x(xValue) }, 0)`);
+        d3.select("#tooltip")
+            .style("left", event.pageX + 18 + "px")
+            .style("top", event.pageY + 18 + "px")
+            .html(`
+                ${ d3.format(",.0f")(Y[i[0]]) }
+            `);
+    }
+    
+    function mouseleft() {
+        marker.attr("display", "none");
+        d3.select("#tooltip").style("display", "none");
+    }
+}
+
+function drawBar(container, dataAll, dataGeo) {
+
+    dataAll.sort((a, b) => d3.ascending(util.parseDate(a.t), util.parseDate(b.t)));
+    const X = d3.map(dataAll, d => util.parseDate(d.t));
+    
+    const xBand = d3.scaleBand()
+        .domain(X)
+        .range([margin.left + gutter.yin, dim.width - margin.right - gutter.yin])
+        .padding(.25);
+    
+    let data = dataGeo.filter(d => d.var == "regnet");
+    const min = Math.min(0, d3.min(data, d => +d.n));
+    const max = Math.max(0, d3.max(data, d => +d.n));
+
+    const y = d3.scaleLinear()
+        .domain([min, max])
+        .range([dim.height - margin.bottom - gutter.x, margin.top + gutter.x]);
+    
+    container.select("svg").remove();
+    const svg = container.append("svg")
+        .attr("width", "100%")
+        .attr("viewBox", [0, 0, dim.width, dim.height]);
+    
+    svg.append("rect")
+        .attr("x", margin.left).attr("y", margin.top)
+        .attr("width", dim.width - margin.left - margin.right)
+        .attr("height", dim.height - margin.top - margin.bottom)
+        .style("fill", "white");
+    
+    svg.append("text")
+        .attr("class", "grid-cell-title")
+        .attr("x", dim.width / 2)
+        .attr("y", margin.top / 2)
+        .text("Regular entries — net");
+
+    svg.call(addAxes, x, y);
+
+    svg.append("g")
+        .append("path")
+        .attr("class", "grid-lines zero")
+        .attr("d", `
+            M${ margin.left + gutter.x },${ y(0) } 
+            H${ dim.width - margin.right - gutter.x }
+        `);
+
+    svg.append("g")
+        .selectAll("rect")
+        .data(data)
+        .join("rect")
+        .attr("class", d => d.n >= 0 ? "chart-bar positive" : "chart-bar negative")
+        .attr("x", d => xBand(util.parseDate(d.t)))
+        .attr("y", d => d.n >= 0 ? y(d.n) : y(0))
+        .attr("width", xBand.bandwidth())
+        .attr("height", d => Math.abs(y(d.n) - y(0)))
+        .on("mousemove", function(event, d) {
+
+            d3.select("#tooltip")
+                .style("display", "block")
+                .style("left", event.pageX + 18 + "px")
+                .style("top", event.pageY + 18 + "px")
+                .html(`
+                    ${ d3.format(",.0f")(d.n) }
+                `);
+
+            d3.select(event.target).style("cursor", "pointer");
+        })
+        .on("mouseleave", function(event, d) {
+            d3.select("#tooltip").style("display", "none")
+            d3.select(event.target).style("cursor", "unset");
+        });
 }

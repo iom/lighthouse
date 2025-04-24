@@ -394,8 +394,19 @@
     & .grid-lines {
         stroke: var(--unBlue3);
         stroke-opacity: .4;
+
+        &.zero {
+            /* stroke: var(--blue1); */
+            stroke: black;
+            stroke-opacity: 1;
+            stroke-width: .5;
+        }
     }
 
+    & .marker {
+        stroke: var(--blue5);
+    }
+    
     & .chart-line {
         fill: none;
         stroke: var(--blue3);
@@ -405,5 +416,16 @@
 
     & .chart-dot {
         fill: var(--blue2);
+    }
+
+    & .chart-bar {
+        
+        &.positive {
+            fill: var(--blue2);
+        }
+
+        &.negative {
+            fill: var(--green1);
+        }
     }
 }
