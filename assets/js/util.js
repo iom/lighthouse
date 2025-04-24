@@ -96,4 +96,8 @@ export function drawBorders(container, path, map, mapOutline, disputedblack, dis
     return container.node();
 }
 
+export const prettyNumber = d => (d === 0 ? "0" : d3.format(".2~s")(d));
 
+export const parseDate = d3.timeParse("%Y %b");
+
+export const prettyPercent = d => (d === 0 ? "0" : d3.format(".2~%")(d));

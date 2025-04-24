@@ -40,8 +40,7 @@ export function renderMap () {
 
 function drawMap(map, mapOutline, disputedBlack, disputedWhite, nats, centroids) {
 
-    d3.select(".dashboard-caption").style("display", "block")
-    const formIcons = d3.select(".topbar .form-icons");
+    d3.select(".dashboard-caption").style("display", "block");
     const mainview = d3.select(".mainview")
         .classed("map", true)
         .classed("boxplot", false);
@@ -55,13 +54,14 @@ function drawMap(map, mapOutline, disputedBlack, disputedWhite, nats, centroids)
     // Forms ////////////////////////////////////
 
     sidebar.append("div").attr("class", "form-inset-bg");
-    const formYear = sidebar.call(forms.addFormRadio);
     const formGeo = sidebar.call(forms.addFormDropdown);
+    const formYear = sidebar.call(forms.addFormRadio);
+    const formIcons = sidebar.call(forms.addFormIcons);
     
     // Re-render visual when any input is changed
 
-    d3.selectAll("#radio-year input").on("input", update);
     d3.selectAll("#dropdown-geo").on("input", update);
+    d3.selectAll("#radio-year input").on("input", update);
 
     function iconClicked() {
         d3.selectAll(".icon-group").classed("icon-clicked", false);
@@ -222,7 +222,7 @@ function drawMap(map, mapOutline, disputedBlack, disputedWhite, nats, centroids)
             : varSelect === "regout" 
                 ? "regular exits" 
                 : "irregular arrivals";
-        
+
         data = nats.filter(d => 
             d.var == varSelect &&
             d.year == yearSelect && 

@@ -74,7 +74,7 @@ export function addFormSlider(container) {
     };
 }
 
-export function addFormIcons(form) {
+export function addFormIcons(container) {
 
     const params = { pad: 75, radius: 15 };
 
@@ -84,9 +84,22 @@ export function addFormIcons(form) {
         { i: 3, src: "irreg",  lab1: "Irregular", lab2: "entries"  }
     ];
     
+    const icons = container.append("form")
+        .attr("class", "form-icons");
+
+    icons.append("div")
+        .attr("class", "form-head")
+        .append("div")
+        .attr("class", "form-title")
+        .text("Indicator");
+
+
+    const formBody = icons.append("div")
+        .attr("class", "form-body");
+    
     iconsData.forEach(d => {
         
-        const group = form.append("div")
+        const group = formBody.append("div")
             .attr("tabindex", 0)
             .attr("class", "icon-group")
             .attr("id", "icon-group-" + d.i)
@@ -107,7 +120,7 @@ export function addFormIcons(form) {
     });
     
     // Default value
-    form.select("#icon-group-1").classed("icon-clicked", true);
+    icons.select("#icon-group-1").classed("icon-clicked", true);
 };
 
 export function addFormRadio(container) {

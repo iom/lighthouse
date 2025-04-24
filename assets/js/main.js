@@ -2,10 +2,29 @@
 import * as forms from "./forms.js";
 import * as util from "./util.js";
 import { renderMap } from "./plot-map.js";
-// import { renderBoxplot } from "./plot-boxplot.js";
+import { renderGrid } from "./plot-grid.js";
 
-const formIcons = d3.select(".form-icons .form-body")
-    .call(forms.addFormIcons);
+document.querySelectorAll(".tab").forEach(button => {
+
+    button.addEventListener("click", switchTab);
+
+    button.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            switchTab.call(this);
+        }
+    });
+});
+
+function switchTab() {
+    document.querySelectorAll(".tab").forEach(btn => btn.classList.remove("active"));
+    this.classList.add("active");
+
+    const chartType = this.getAttribute("data-chart");
+    updateChart(chartType);
+}
+
+// const formIcons = d3.select(".form-icons .form-body")
+//     .call(forms.addFormIcons);
 
 // Tooltip
 
@@ -23,13 +42,12 @@ d3.select("body")
 
     
 updateChart("map");
-// updateChart("boxplot");
     
 function updateChart(selected) {
     switch(selected) {
         case "map":
             return renderMap();
-        case "boxplot":
-            return renderBoxplot();
+        case "grid":
+            return renderGrid();
     }
 }
