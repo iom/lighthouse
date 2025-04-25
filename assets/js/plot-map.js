@@ -83,9 +83,11 @@ function drawMap(map, mapOutline, disputedBlack, disputedWhite, nats, centroids)
         .attr("preserveAspectRatio", "xMinYMax slice")
         .attr("viewBox", [0, 0, util.dim.width, util.dim.height]);
 
+    let xpos = window.innerWidth < 480 ? 10 : -50;
+
     let projection = d3.geoNaturalEarth1()
         .scale(190)
-        .center([-50, 10]);
+        .center([xpos, 10]);
 
     let path = d3.geoPath().projection(projection);
 
@@ -101,18 +103,21 @@ function drawMap(map, mapOutline, disputedBlack, disputedWhite, nats, centroids)
 
     let unknownBox = panelSVG.append("g")
         .attr("class", "unknown");
+    
+    const [xmin, ymin] = projection([-120 - 6, -15 + 8]);
+    const [xmax, ymax] = projection([-120 + 6, -15 - 8]);
 
     unknownBox.append("rect")
         .attr("class", "unknown-rect")
-        .attr("x", 260)
-        .attr("y", 310)
-        .attr("width", 40)
-        .attr("height", 50)
+        .attr("x", xmin)
+        .attr("y", ymin)
+        .attr("width", xmax - xmin)
+        .attr("height", ymax - ymin)
 
     unknownBox.append("text")
         .attr("class", "unknown-text")
-        .attr("x", 281)
-        .attr("y", 310)
+        .attr("x", (xmax + xmin) / 2)
+        .attr("y", ymin)
         .attr("dy", "-.7em")
         .attr("text-anchor", "middle")
         .text("Unknown")
@@ -260,6 +265,11 @@ function drawMap(map, mapOutline, disputedBlack, disputedWhite, nats, centroids)
                 d3.select("#tooltip").style("display", "none")
                 d3.select(event.target).style("cursor", "unset");
             });
+        
+        const title = d3.select(".dashboard-title");
+        title.text(`
+            Nationalities of ${ varText } to ${ util.geos[geoSelect] }, ${ yearSelect }
+        `);
     }
 }
 

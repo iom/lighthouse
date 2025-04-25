@@ -69,6 +69,7 @@ h2, .methodology {
     font-size: 1rem;
     font-size: clamp(1rem, .8rem + .8vw, 2rem);
     font-weight: 600;
+    margin: 1em 0;
 }
 
 h3 {
@@ -87,6 +88,10 @@ strong {
 
 svg {
     display: block;
+}
+
+img {
+    max-width: 100%;
 }
 
 .disclaimer {
@@ -193,6 +198,51 @@ footer {
     }
 }
 
+/*** Deep dives ********************************/
+
+.tiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1em;
+
+    & .tile {
+        padding: 1em;
+        background-color: var(--unBlue6);
+        border-radius: 2px;
+        transition: 
+            opacity .1s ease-in-out,
+            transform .1s ease-in-out;
+
+        & .thumbnail img {
+            object-fit: cover;
+            width: 100%;
+            height: 220px;
+        }
+
+        & .title {
+            color: var(--blue1);
+            font-weight: bold;
+            margin: .5em 0;
+        }
+
+        & .desc {
+            font-size: .8em;
+            opacity: .7;
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: .8;
+            transform: scale(1.01);
+        }
+    }
+
+}
+
+
+
+
+
 /*** Page **************************************/
 
 .chart {
@@ -242,6 +292,12 @@ footer {
 
 
 }
+
+
+
+
+
+
 
 
 #fig1 {

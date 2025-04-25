@@ -37,8 +37,6 @@ function drawGrid(series) {
         
     function update() {
 
-        // d3.selectAll("grid-cell").select("svg").remove();
-        
         let geoSelect = formGeo.select("#dropdown-geo select").property("value");
         let dataGeo = series.filter(d => d.geo == geoSelect);
         
@@ -46,6 +44,9 @@ function drawGrid(series) {
         regularExits.call(drawLine, dataGeo, "regout", "Regular exits");
         netFlow.call(drawBar, series, dataGeo);
         irregular.call(drawLine, dataGeo, "irreg", "Irregular entries");
+
+        const title = d3.select(".dashboard-title");
+        title.text(`Mobility flows in ${ util.geos[geoSelect] }`);
     }
 
     update();
@@ -119,24 +120,13 @@ function addAxes(panel, xScale, yScale) {
 function drawLine(container, dataGeo, varSelect, title) {
 
     let data = dataGeo.filter(d => d.var == varSelect);
-    data.sort((a, b) => d3.ascending(util.parseDate(a.t), util.parseDate(b.t)));
-
-    const X = d3.map(data, d => util.parseDate(d.t));
-    const Y = d3.map(data, d => +d.n);
-    const Z = d3.map(data, d => d.var);
-    const I = d3.range(X.length);
-    const xValues = [...new Set(X)];
-
-    const y = d3.scaleLinear()
-        .domain([d3.min(data, d => +d.n), d3.max(data, d => +d.n)])
-        .range([dim.height - margin.bottom - gutter.x, margin.top + gutter.x]);
-
+    
     container.select("svg").remove();
     const svg = container.append("svg")
         .attr("width", "100%")
         .attr("viewBox", [0, 0, dim.width, dim.height]);
     
-    const panel = svg.append("rect")
+    const rectBG = svg.append("rect")
         .attr("x", margin.left).attr("y", margin.top)
         .attr("width", dim.width - margin.left - margin.right)
         .attr("height", dim.height - margin.top - margin.bottom)
@@ -148,61 +138,77 @@ function drawLine(container, dataGeo, varSelect, title) {
         .attr("y", margin.top / 2)
         .text(title);
 
-    svg.call(addAxes, x, y);
+    if (data.length > 0) {
 
-    const line = d3.line()
-        .curve(d3.curveBasis)
-        .x(i => x(X[i]))
-        .y(i => y(Y[i]));
+        data.sort((a, b) => d3.ascending(util.parseDate(a.t), util.parseDate(b.t)));
 
-    svg.append("g")
-        .selectAll("path")
-        .data(d3.group(I, i => Z[i]))
-        .join("path")
-        .attr("class", "chart-line")
-        .attr("d", ([, I]) => line(I));
+        const y = d3.scaleLinear()
+            .domain(d3.extent(data, d => +d.n))
+            .range([dim.height - margin.bottom - gutter.x, margin.top + gutter.x]);
 
-    const dots = svg.append("g")
-        .selectAll("circle")
-        .data(data)
-        .join("circle")
-        .attr("class", "chart-dot")
-        .attr("cx", d => x(util.parseDate(d.t)))
-        .attr("cy", d => y(d.n))
-        .attr("r", 2);
-    
-    // Hover ////////////////
+        svg.call(addAxes, x, y);
 
-    const marker = svg.append("g").attr("display", "none")
-    marker.append("path")
-        .attr("class", "marker")
-        .attr("d", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]))
-    
-    panel.on("mouseenter", mouseentered)
-        .on("mousemove", mousemoved)
-        .on("mouseleave", mouseleft);
+        const line = d3.line()
+            .curve(d3.curveBasis)
+            .x(d => x(util.parseDate(d.t)))
+            .y(d => y(+d.n));
 
-    function mouseentered() {
-        marker.attr("display", null);
-        d3.select("#tooltip").style("display", "block");
-    }
+        svg.append("g")
+            .append("path")
+            .attr("class", "chart-line")
+            .attr("d", line(data.filter(d => !isNaN(d.n))));
+
+        svg.append("g")
+            .selectAll("circle")
+            .data(data.filter(d => !isNaN(d.n)))
+            .join("circle")
+            .attr("class", "chart-dot")
+            .attr("cx", d => x(util.parseDate(d.t)))
+            .attr("cy", d => y(d.n))
+            .attr("r", 2);
         
-    function mousemoved(event) {
-        const [xm, ym] = d3.pointer(event);
-        const xValue = d3.least(xValues, u => Math.abs(x(u) - xm));
-        const i = X.map((d, i) => d.getTime() === xValue.getTime() ? i : "").filter(String);
-        marker.attr("transform", `translate(${ x(xValue) }, 0)`);
-        d3.select("#tooltip")
-            .style("left", event.pageX + 18 + "px")
-            .style("top", event.pageY + 18 + "px")
-            .html(`
-                ${ d3.format(",.0f")(Y[i[0]]) }
-            `);
-    }
-    
-    function mouseleft() {
-        marker.attr("display", "none");
-        d3.select("#tooltip").style("display", "none");
+        const marker = svg.append("g").attr("display", "none");
+        marker.append("path")
+            .attr("class", "marker")
+            .attr("d", d3.line()([[0, margin.top], [0, dim.height - margin.bottom]]));
+        rectBG.on("mouseenter", mouseentered)
+            .on("mousemove", mousemoved)
+            .on("mouseleave", mouseleft);
+
+        function mouseentered() {
+            marker.attr("display", null);
+            d3.select("#tooltip").style("display", "block");
+        }
+            
+        function mousemoved(event) {
+
+            const [xm, ym] = d3.pointer(event);
+            const X = d3.map(data, d => util.parseDate(d.t));
+            const Y = d3.map(data, d => +d.n);
+            const xValue = d3.least(X, u => Math.abs(x(u) - xm));
+            const i = X.map((d, i) => d.getTime() === xValue.getTime() ? i : "").filter(String);
+
+            const numText = !isNaN(Y[i[0]]) 
+                ? d3.format(",.0f")(Y[i[0]])
+                : "No data"
+            
+            marker.attr("transform", `translate(${ x(xValue) }, 0)`);
+            d3.select("#tooltip")
+                .style("left", event.pageX + 18 + "px")
+                .style("top", event.pageY + 18 + "px")
+                .html(`
+                    ${ d3.timeFormat("%b %Y")(xValue) }:
+                    <strong>${ numText }</strong>
+                `);
+        }
+        
+        function mouseleft() {
+            marker.attr("display", "none");
+            d3.select("#tooltip").style("display", "none");
+        }
+
+    } else {
+        rectBG.style("opacity", .5);
     }
 }
 
@@ -217,63 +223,73 @@ function drawBar(container, dataAll, dataGeo) {
         .padding(.25);
     
     let data = dataGeo.filter(d => d.var == "regnet");
-    const min = Math.min(0, d3.min(data, d => +d.n));
-    const max = Math.max(0, d3.max(data, d => +d.n));
-
-    const y = d3.scaleLinear()
-        .domain([min, max])
-        .range([dim.height - margin.bottom - gutter.x, margin.top + gutter.x]);
     
     container.select("svg").remove();
     const svg = container.append("svg")
         .attr("width", "100%")
         .attr("viewBox", [0, 0, dim.width, dim.height]);
-    
-    svg.append("rect")
+
+    const rectBG = svg.append("rect")
         .attr("x", margin.left).attr("y", margin.top)
         .attr("width", dim.width - margin.left - margin.right)
         .attr("height", dim.height - margin.top - margin.bottom)
         .style("fill", "white");
-    
+
     svg.append("text")
         .attr("class", "grid-cell-title")
         .attr("x", dim.width / 2)
         .attr("y", margin.top / 2)
         .text("Regular entries — net");
 
-    svg.call(addAxes, x, y);
+    if (data.length > 0) {
 
-    svg.append("g")
-        .append("path")
-        .attr("class", "grid-lines zero")
-        .attr("d", `
-            M${ margin.left + gutter.x },${ y(0) } 
-            H${ dim.width - margin.right - gutter.x }
-        `);
+        const min = Math.min(0, d3.min(data, d => +d.n));
+        const max = Math.max(0, d3.max(data, d => +d.n));
 
-    svg.append("g")
-        .selectAll("rect")
-        .data(data)
-        .join("rect")
-        .attr("class", d => d.n >= 0 ? "chart-bar positive" : "chart-bar negative")
-        .attr("x", d => xBand(util.parseDate(d.t)))
-        .attr("y", d => d.n >= 0 ? y(d.n) : y(0))
-        .attr("width", xBand.bandwidth())
-        .attr("height", d => Math.abs(y(d.n) - y(0)))
-        .on("mousemove", function(event, d) {
+        const y = d3.scaleLinear()
+            .domain([min, max])
+            .range([dim.height - margin.bottom - gutter.x, margin.top + gutter.x]);
+        
+        svg.call(addAxes, x, y);
 
-            d3.select("#tooltip")
-                .style("display", "block")
-                .style("left", event.pageX + 18 + "px")
-                .style("top", event.pageY + 18 + "px")
-                .html(`
-                    ${ d3.format(",.0f")(d.n) }
-                `);
+        svg.append("g")
+            .append("path")
+            .attr("class", "grid-lines zero")
+            .attr("d", `
+                M${ margin.left + gutter.x },${ y(0) } 
+                H${ dim.width - margin.right - gutter.x }
+            `);
 
-            d3.select(event.target).style("cursor", "pointer");
-        })
-        .on("mouseleave", function(event, d) {
-            d3.select("#tooltip").style("display", "none")
-            d3.select(event.target).style("cursor", "unset");
-        });
+        svg.append("g")
+            .selectAll("rect")
+            .data(data)
+            .join("rect")
+            .attr("class", d => d.n >= 0 
+                ? "chart-bar positive" 
+                : "chart-bar negative"
+            )
+            .attr("x", d => xBand(util.parseDate(d.t)))
+            .attr("y", d => d.n >= 0 ? y(d.n) : y(0))
+            .attr("width", xBand.bandwidth())
+            .attr("height", d => Math.abs(y(d.n) - y(0)))
+            .on("mousemove", function(event, d) {
+
+                d3.select("#tooltip")
+                    .style("display", "block")
+                    .style("left", event.pageX + 18 + "px")
+                    .style("top", event.pageY + 18 + "px")
+                    .html(`
+                        ${ d3.format(",.0f")(d.n) }
+                    `);
+
+                d3.select(event.target).style("cursor", "pointer");
+            })
+            .on("mouseleave", function(event, d) {
+                d3.select("#tooltip").style("display", "none")
+                d3.select(event.target).style("cursor", "unset");
+            });
+
+    } else {
+        rectBG.style("opacity", .5);
+    }
 }

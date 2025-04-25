@@ -85,7 +85,7 @@ export function addFormIcons(container) {
     ];
     
     const icons = container.append("form")
-        .attr("class", "form-icons");
+        .attr("id", "radio-indicator");
 
     icons.append("div")
         .attr("class", "form-head")
