@@ -54,31 +54,29 @@
 
 body {
     font-family: var(--font), sans-serif;
-    font-size: 1rem;
+    font-size: 1em;
 }
 
 h1 {
-    font-size: 2rem;
-    font-size: clamp(2rem, 1rem + 4vw, 3rem);
+    font-size: 3em;
     font-weight: 600;
     line-height: 1.2em;
-    margin: .25rem 0 1rem 0;
+    margin: .25em 0 .5em 0;
 }
 
 h2, .methodology {
-    font-size: 1rem;
-    font-size: clamp(1rem, .8rem + .8vw, 2rem);
+    font-size: 2em;
     font-weight: 600;
     margin: 1em 0;
 }
 
 h3 {
     font-weight: 600;
-    margin: .5rem 0;
+    margin: .5em 0;
 }
 
 p {
-    margin: 1rem 0;
+    margin: .8em 0;
 }
 
 strong {
@@ -107,11 +105,12 @@ img {
 header {
     display: flex;
     padding: min(3vw, 1rem) min(10vw, 5rem);
-}
-
-.logo-container img {
-    width: min(60vw, 295px);
-    height: auto;
+    
+    & .logo-container img {
+        width: min(60vw, 100px);
+        height: auto;
+        padding-top: 10px;
+    }
 }
 
 footer {
@@ -178,11 +177,31 @@ footer {
     background-color: var(--blue1);
     color: white; 
     margin-bottom: 2rem;
+
+    .deep-dive & {
+
+        & h1 {
+            font-size: 1.5em !important;
+            margin: .25em 0;
+        }
+
+        & .title-block-contents {
+            padding: 1em;
+        }
+
+        & .subtitle {
+            display: none;
+        }
+    }
+
+    & a {
+        color: unset;
+        text-decoration: none;
+    }
 }
 
 .title-block-contents {
     text-align: center;
-    /* max-width: 50rem; */
     padding: 2em 1em;
 
     .product-name {
@@ -194,7 +213,20 @@ footer {
     }
 
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.2em;
+    }
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    gap: .4em;
+    color: #343a40;
+    margin-bottom: 2rem;
+
+    & .svg-inline--fa {
+        height: 1em;
+        overflow: visible;
     }
 }
 
@@ -204,6 +236,11 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1em;
+
+    & a {
+        text-decoration: none;
+        color: unset;
+    }
 
     & .tile {
         padding: 1em;
