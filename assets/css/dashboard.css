@@ -8,7 +8,6 @@
 .dashboard-container {
     position: relative;
     height: auto;
-    overflow-x: scroll;
     margin: 1.2em 0;
 
     & .dashboard-bg {
