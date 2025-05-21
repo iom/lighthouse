@@ -278,15 +278,15 @@
             fill: var(--unBlue6);
         }
 
-        & .map-outline {
+        /* & .map-outline {
             fill: none;
             stroke: none;
             stroke: var(--blue3);
             stroke-width: .5;
             filter: drop-shadow(0 0 5px var(--unBlue3));
-        }
+        } */
 
-        & .unknown {
+        /* & .unknown {
             & .unknown-rect {
                 fill: var(--unBlue5);
                 fill-opacity: .7;
@@ -298,32 +298,20 @@
                 font-size: .7em;
                 fill: var(--unBlue2);
             }
-        }
+        } */
           
         & .border {
-            fill: white;
-            stroke: var(--unBlue5);
-            stroke-width: .5;
-            stroke-linejoin: round;
-            transition: fill .2s ease-in-out;
 
-            &.latent {
-                fill: var(--unBlue4);
-                cursor: pointer;
-                fill-opacity: 1;
-                /* transition: fill-opacity .1s ease-in; */
-
-                &:hover {
-                    fill-opacity: .8;
-                }
+            &.hero {
+                fill: var(--brown2);
             }
 
-            &.geo-select {
-                fill: var(--unBlue2);
+            &:hover {
+                fill-opacity: .9;
             }
         }
           
-        & .border-disputed-black {
+        /* & .border-disputed-black {
             fill: none;
             stroke-width: .5;
             stroke-linejoin: round;
@@ -335,14 +323,7 @@
             stroke-width: 1.25;
             stroke-linejoin: round;
             stroke-dasharray: .5;
-        }
-        
-        & .bubble {
-            fill: var(--red4);
-            fill-opacity: .5;
-            stroke: var(--red2);
-            stroke-width: .75;
-        }
+        } */
     }
 }
 
