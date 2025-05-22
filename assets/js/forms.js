@@ -166,7 +166,7 @@ export function addFormDropdown(container, options) {
         .attr("class", "form-head")
         .append("div")
         .attr("class", "form-title")
-        .text("Country");
+        .text("Reporting country");
 
     const addOption = (form, key, value) => {
         form.append("option")
@@ -197,7 +197,7 @@ export function addFormDropdownNats(container, geoSelect) {
         .attr("class", "form-head")
         .append("div")
         .attr("class", "form-title")
-        .text("Country");
+        .text("Nationality");
 
     const addOption = (form, value) => {
         form.append("option")
