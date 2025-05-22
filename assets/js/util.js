@@ -48,6 +48,32 @@ export const geos = {
     "PER": "Peru"
 }
 
+export const nats = [
+    "Total",
+    "Argentina",
+    "Bolivarian Republic of Venezuela",
+    "Brazil",
+    "Canada",
+    "Colombia",
+    "Dominican Republic",
+    "Cuba",
+    "Ecuador",
+    "El Salvador",
+    "Guatemala",
+    "Haiti",
+    "Honduras",
+    "Mexico",
+    "Nicaragua",
+    "Panama",
+    "United States",
+    "Other Americas",
+    "Africa",
+    "Asia",
+    "Europe",
+    "Oceania",
+    "Unknown"
+]
+
 export function formatNumAxis(num) {
     let numFormat;
     if (num >= 100) {
@@ -78,7 +104,7 @@ export function drawBorders(container, path, map, mapOutline, disputedblack, dis
             : "border"
         )
         .attr("d", path);
-        
+    
     borders.selectAll("disputed-black")
         .data(disputedblack)
         .join("path")

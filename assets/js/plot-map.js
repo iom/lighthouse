@@ -34,7 +34,7 @@ function drawMap(map, nats) {
     // Forms ////////////////////////////////////
 
     sidebar.append("div").attr("class", "form-inset-bg");
-    const formGeo = sidebar.call(forms.addFormDropdown);
+    const formGeo = sidebar.call(forms.addFormDropdown, util.geos);
     const formYear = sidebar.call(forms.addFormRadio);
     const formIcons = sidebar.call(forms.addFormIcons);
     

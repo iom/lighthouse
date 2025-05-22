@@ -24,8 +24,12 @@ function drawGrid(series) {
 
     // Forms ////////////////////////////////////
 
-    const formGeo = sidebar.call(forms.addFormDropdown);
+    const formGeo = sidebar.call(forms.addFormDropdown, util.geos);
+    let geoSelect = formGeo.select("#dropdown-geo select").property("value");
+    
+    const formNat = sidebar.call(forms.addFormDropdownNats, geoSelect);
     d3.selectAll("#dropdown-geo").on("input", update);
+    d3.selectAll("#dropdown-nat").on("input", update);
 
     const grid = panel.append("div")
         .attr("class", "grid");
@@ -37,8 +41,9 @@ function drawGrid(series) {
         
     function update() {
 
-        let geoSelect = formGeo.select("#dropdown-geo select").property("value");
-        let dataGeo = series.filter(d => d.geo == geoSelect);
+        geoSelect = formGeo.select("#dropdown-geo select").property("value");
+        let natSelect = formNat.select("#dropdown-nat select").property("value");
+        let dataGeo = series.filter(d => d.geo == geoSelect && d.group == natSelect);
         
         regularEntries.call(drawLine, dataGeo, "regin", "Regular entries");
         regularExits.call(drawLine, dataGeo, "regout", "Regular exits");

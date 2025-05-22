@@ -157,11 +157,7 @@ export function addFormRadio(container) {
     dropdown.select("input[value='2024']").property("checked", true);
 }
 
-
-
-
-
-export function addFormDropdown(container) {
+export function addFormDropdown(container, options) {
   
     const dropdown = container.append("form")
         .attr("id", "dropdown-geo");
@@ -182,10 +178,43 @@ export function addFormDropdown(container) {
         .attr("class", "form-body")
         .append("select");
 
-    for (let [code, label] of Object.entries(util.geos)) {
+    for (let [code, label] of Object.entries(options)) {
         formBody.call(addOption, code, label);
     }
 
     // Default value
     formBody.select("option[value='0']").attr("selected", true);
+}
+
+export function addFormDropdownNats(container, geoSelect) {
+  
+    const geoSelected = util.geos[geoSelect];
+
+    const dropdown = container.append("form")
+        .attr("id", "dropdown-nat");
+
+    dropdown.append("div")
+        .attr("class", "form-head")
+        .append("div")
+        .attr("class", "form-title")
+        .text("Country");
+
+    const addOption = (form, value) => {
+        form.append("option")
+            .text(value)
+            .attr("value", value);
+    };
+
+    const formBody = dropdown.append("div")
+        .attr("class", "form-body")
+        .append("select");
+
+    const nats = util.nats.filter(x => x !== geoSelected);
+
+    for (let i = 0; i < nats.length; i++) {
+        formBody.call(addOption, nats[i]);
+    }
+
+    // Default value
+    formBody.select("option[value='Total']").attr("selected", true);
 }
