@@ -71,6 +71,7 @@ h2, .methodology {
 }
 
 h3 {
+    font-size: 1.5em;
     font-weight: 600;
     margin: .5em 0;
 }
@@ -98,6 +99,14 @@ img {
     color: var(--red1);
     text-transform: uppercase;
     font-size: 1.2rem;
+}
+
+ul {
+    margin: .8em 0 .8em 2em;
+}
+
+li {
+    padding: 0 0 .5em .5em;
 }
 
 /*** Header and footer *************************/
@@ -283,51 +292,23 @@ footer {
 /*** Page **************************************/
 
 .chart {
-    position: relative;
 
-    & .fig-title {
-        position: absolute;
-        top: 1em;
-        left: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        font-size: 1.2em;
+    margin: .8em 0;
+
+    & .chart-title {
+        font-size: 1.1em;
         font-weight: 700;
     }
 
-    --color-arrow: var(--blue2);
-    --show-grid: none;
-    /* --show-grid: unset; */
-
-    & .panel {
-        background: var(--unBlue6);
+    & .chart-source {
+        font-size: .65em;
+        color: var(--blue3);
+        align-self: start;
     }
-
-    & .grid {
-        display: var(--show-grid);
-        stroke: lightgray;
-        stroke-opacity: .7;
-        font-size: .75em;
-        color: lightgray;
-    }
-
-    & .land {
-        fill: var(--brown5);
-        fill: var(--gray5);
-        stroke: white;
-        stroke-width: 2px;
-    }
-
-    & #arrow {
-        fill: var(--color-arrow);
-    }
-
-    & .flow {
-        fill: none;
-        stroke: var(--color-arrow);
-        stroke-width: 20px;
-    }
-
-
 }
 
 
