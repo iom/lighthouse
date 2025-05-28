@@ -312,7 +312,16 @@ footer {
 }
 
 
+.highlights {
+    background-color: var(--unBlue5);
+    padding: .25em 1em;
+    margin: 0 0 1em 0;
 
+    & h3 {
+        font-size: 1.1em;
+        text-align: center;
+    }
+}
 
 
 
