@@ -63,8 +63,8 @@ const gutter = { x: 12.5, y: 12.5, yin: 20 };
 
 const x = d3.scaleLinear()
     .domain([
-        util.parseDate("2021 Jan"), 
-        util.parseDate("2025 Jan")
+        util.parseDate("2022 Jan"), 
+        util.parseDate("2025 Jun")
     ])
     .range([
         margin.left + gutter.yin, 
@@ -77,7 +77,6 @@ function addAxes(panel, xScale, yScale) {
 
     const xAxis = d3.axisBottom(xScale)
         .tickValues([
-            util.parseDate("2021 Jan"), 
             util.parseDate("2022 Jan"), 
             util.parseDate("2023 Jan"), 
             util.parseDate("2024 Jan"),
@@ -124,7 +123,7 @@ function addAxes(panel, xScale, yScale) {
 
 function drawLine(container, dataGeo, varSelect, title) {
 
-    let data = dataGeo.filter(d => d.var == varSelect);
+    let data = dataGeo.filter(d => util.parseDate(d.t) >= util.parseDate("2022 Jan") && d.var == varSelect);
     
     container.select("svg").remove();
     const svg = container.append("svg")
