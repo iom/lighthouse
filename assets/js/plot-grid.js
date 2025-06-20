@@ -25,9 +25,16 @@ function drawGrid(series) {
     // Forms ////////////////////////////////////
 
     const formGeo = sidebar.call(forms.addFormDropdown, util.geos);
+    d3.select("#dropdown-geo .form-head").append("div")
+        .attr("class", "form-desc")
+        .text("Use the filters below to explore mobility trends across the Americas. Select a reporting country to display data specific to that country.")
+        
     let geoSelect = formGeo.select("#dropdown-geo select").property("value");
     
     const formNat = sidebar.call(forms.addFormDropdownNats, geoSelect);
+    d3.select("#dropdown-nat .form-head").append("div")
+        .attr("class", "form-desc")
+        .text("Refine your view by selecting a nationality to analyze how mobility trends are evolving for specific population groups within the chosen reporting country.")
     d3.selectAll("#dropdown-geo").on("input", update);
     d3.selectAll("#dropdown-nat").on("input", update);
 
@@ -142,6 +149,13 @@ function drawLine(container, dataGeo, varSelect, title) {
         .attr("y", margin.top / 2)
         .text(title);
 
+    const nodata = svg.append("text")
+        .attr("class", "grid-cell-nodata")
+        .attr("x", dim.width / 2)
+        .attr("y", (dim.height - margin.bottom + margin.top) / 2)
+        .style("opacity", 0)
+        .text("No data");
+
     if (data.length > 0) {
 
         data.sort((a, b) => d3.ascending(util.parseDate(a.t), util.parseDate(b.t)));
@@ -213,6 +227,7 @@ function drawLine(container, dataGeo, varSelect, title) {
 
     } else {
         rectBG.style("opacity", .5);
+        nodata.style("opacity", 1);
     }
 }
 
@@ -244,6 +259,13 @@ function drawBar(container, dataAll, dataGeo) {
         .attr("x", dim.width / 2)
         .attr("y", margin.top / 2)
         .text("Regular entries — net");
+    
+    const nodata = svg.append("text")
+        .attr("class", "grid-cell-nodata")
+        .attr("x", dim.width / 2)
+        .attr("y", (dim.height - margin.bottom + margin.top) / 2)
+        .style("opacity", 0)
+        .text("No data");
 
     if (data.length > 0) {
 
@@ -282,8 +304,12 @@ function drawBar(container, dataAll, dataGeo) {
                     .style("display", "block")
                     .style("left", event.pageX + 18 + "px")
                     .style("top", event.pageY + 18 + "px")
+                    // .html(`
+                    //     ${ d3.format(",.0f")(d.n) }
+                    // `);
                     .html(`
-                        ${ d3.format(",.0f")(d.n) }
+                        ${ d3.timeFormat("%b %Y")(util.parseDate(d.t)) }:
+                        <strong>${ d3.format(",.0f")(d.n) }</strong>
                     `);
 
                 d3.select(event.target).style("cursor", "pointer");
@@ -295,5 +321,6 @@ function drawBar(container, dataAll, dataGeo) {
 
     } else {
         rectBG.style("opacity", .5);
+        nodata.style("opacity", 1);
     }
 }

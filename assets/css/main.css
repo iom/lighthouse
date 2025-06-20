@@ -85,6 +85,10 @@ strong {
     font-weight: 700;
 }
 
+emph {
+    font-style: italic !important;
+}
+
 svg {
     display: block;
 }
@@ -189,18 +193,18 @@ footer {
 
     .deep-dive & {
 
-        & h1 {
+        /* & h1 {
             font-size: 1.5em !important;
             margin: .25em 0;
-        }
+        } */
 
-        & .title-block-contents {
+        /* & .title-block-contents {
             padding: 1em;
         }
 
         & .subtitle {
             display: none;
-        }
+        } */
     }
 
     & a {
@@ -285,8 +289,9 @@ footer {
 
 }
 
-
-
+.panel img {
+    width: 700px;
+}
 
 
 /*** Page **************************************/

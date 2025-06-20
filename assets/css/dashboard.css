@@ -95,6 +95,15 @@
         text-align: left;
         padding: .8rem .8rem 1rem .8rem;
 
+        & .sidebar-desc {
+            display: block;
+            color: var(--blue2);
+            fill: var(--blue2);
+            font-size: .625rem;
+            line-height: 1.2em;
+            text-wrap: balance;
+        }
+
         & form {
             z-index: 1;
             
@@ -351,6 +360,13 @@
                 font-size: .8em;
                 font-weight: bold;
                 fill: var(--blue1);
+                text-anchor: middle;
+                dominant-baseline: middle;
+            }
+
+            & .grid-cell-nodata {
+                font-size: .7em;
+                fill: var(--blue3);
                 text-anchor: middle;
                 dominant-baseline: middle;
             }
