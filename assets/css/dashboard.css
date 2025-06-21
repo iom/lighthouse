@@ -26,6 +26,11 @@
             color: var(--blue2);
             font-weight: 700;
         }
+
+        & strong {
+            color: unset;
+            font-weight: 700;
+        }
     }
 
     /* Tabs */

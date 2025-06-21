@@ -163,10 +163,10 @@ function drawMap(map, nats) {
         d3.select("path[geo='" + geoSelect + "']").classed("geo-select", true);
 
         varText = varSelect === "regin" 
-            ? "regular arrivals" 
+            ? "regular entries" 
             : varSelect === "regout" 
                 ? "regular exits" 
-                : "irregular arrivals";
+                : "irregular entries";
 
         data = nats.filter(d => 
             d.var == varSelect &&
