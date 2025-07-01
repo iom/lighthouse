@@ -36,7 +36,7 @@ d3.select("body")
     .style("position", "absolute")
     .style("z-index", 999)
     .style("width", "auto")
-    .style("max-width", "300px")
+    .style("max-width", "200px")
     .style("height", "auto")
     .style("border", `1px solid ${ util.colors.gray4 }`);
 

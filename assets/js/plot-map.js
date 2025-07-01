@@ -23,7 +23,7 @@ function drawMap(map, nats) {
     d3.select(".dashboard-caption").style("display", "block");
     const mainview = d3.select(".mainview")
         .classed("map", true)
-        .classed("boxplot", false);
+        .classed("grid", false);
     mainview.selectAll("div, svg").remove();
 
     const sidebar = mainview.append("div")
@@ -129,22 +129,28 @@ function drawMap(map, nats) {
 
     function mouseMoved(event, d) {
 
-        const text = (d) => {
-            if (d.properties.iso3c === geoSelect) {
-                return `${ d.properties.english } (reporting country)`;
-            } else if (+d.n == 0) {
-                return `${ d.properties.english}: No data`;
-            } else {
-                return `${ d.properties.english}: ${ d3.format(",.0f")(+d.n) }`;
-            }
-        }
+        if (d.n === null && d.properties.iso3c !== geoSelect) {
 
-        d3.select("#tooltip")
-            .style("display", "block")
-            .style("left", event.pageX + 18 + "px")
-            .style("top", event.pageY + 18 + "px")
-            .html(text(d));
-        d3.select(event.target).style("cursor", "pointer");
+        } else {
+
+            const text = (d) => {
+                if (d.properties.iso3c === geoSelect) {
+                    return `${ d.properties.english } (reporting country)`;
+                } else {
+                    return `
+                        <span class='value'>${ d3.format(",.0f")(+d.n) }</span>
+                        <br>${ varText } from ${ d.label }
+                    `;
+                }
+            }
+    
+            d3.select("#tooltip")
+                .style("display", "block")
+                .style("left", event.pageX + 18 + "px")
+                .style("top", event.pageY + 18 + "px")
+                .html(text(d));
+            d3.select(event.target).style("cursor", "pointer");
+        }
     }
 
     function mouseLeft(event, d) {
@@ -175,10 +181,12 @@ function drawMap(map, nats) {
             d.n > 0
         );
         
+        
         let dataJoin = map.map(a => {
             const match = data.find(b => b.nat === a.properties.iso3c);
             return {
                 ...a,
+                label: match ? match.label : null,
                 n: match ? match.n : null
             };
         });

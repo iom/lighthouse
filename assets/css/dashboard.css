@@ -291,28 +291,6 @@
             height: var(--height-chart);
             fill: var(--unBlue6);
         }
-
-        /* & .map-outline {
-            fill: none;
-            stroke: none;
-            stroke: var(--blue3);
-            stroke-width: .5;
-            filter: drop-shadow(0 0 5px var(--unBlue3));
-        } */
-
-        /* & .unknown {
-            & .unknown-rect {
-                fill: var(--unBlue5);
-                fill-opacity: .7;
-                stroke: var(--blue3);
-                stroke-width: .5;
-            }
-
-            & .unknown-text {
-                font-size: .7em;
-                fill: var(--unBlue2);
-            }
-        } */
           
         & .border {
 
@@ -324,24 +302,19 @@
                 fill-opacity: .9;
             }
         }
-          
-        /* & .border-disputed-black {
-            fill: none;
-            stroke-width: .5;
-            stroke-linejoin: round;
-            stroke-dasharray: .5;
+
+        & .legend-text {
+            fill: var(--blue2);
+            font-size: .8em;
         }
-          
-        & .border-disputed-white {
-            fill: none;
-            stroke-width: 1.25;
-            stroke-linejoin: round;
-            stroke-dasharray: .5;
-        } */
     }
 }
 
 .mainview.grid {
+
+    & .panel{
+        height: auto;
+    }
 
     & .form-inset-bg {
         opacity: 0;
@@ -417,5 +390,73 @@
         &.negative {
             fill: var(--green1);
         }
+    }
+
+    @media (width < 1000px) {
+    /* sidebar moves up */
+
+        & .sidebar {
+            /* position: relative; */
+            top: .5em;
+            left: 7.5em;
+            flex-direction: row;
+        }
+
+        & .grid {
+            padding-top: 10em;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    @media (width < 490px) {
+    /* sidebar moves down, grid becomes 4 x 1 */
+
+        & .sidebar {
+            position: relative;
+            top: unset;
+            left: unset;
+            margin-top: 4.5em;
+            width: 100%;
+            
+            & form {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: column;
+                align-self: start;
+                max-width: 100%;
+            }
+
+            & .form-head {
+                width: auto;
+                margin: 0;
+                flex-shrink: 1;
+                margin-bottom: 1em;
+            }
+
+            & .form-body {
+                padding-right: .5em;
+            }
+        }
+
+        & .grid {
+            padding-top: unset;
+            padding-bottom: 2em;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+        }
+    }
+}
+
+.tooltip {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: .2em .5em .3em .5em;
+    font-size: .8em;
+
+    & .value {
+        font-size: 1.5em;
+        font-weight: 700;
     }
 }
