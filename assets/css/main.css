@@ -146,7 +146,7 @@ footer {
 
 .content-grid, .full-width {
     --padding-inline: 2rem;
-    --content-max-width: 700px;
+    --content-max-width: 870px;
     --breakout-max-width: var(--width-chart);
     --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
 

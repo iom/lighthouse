@@ -24,38 +24,38 @@
 <rect x='0.00' y='0.00' width='340.16' height='170.08' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
 </g>
 <defs>
-  <clipPath id='cpMzIuMTZ8MjY5LjU0fDkuODB8MTQ4LjY2'>
-    <rect x='32.16' y='9.80' width='237.37' height='138.86' />
+  <clipPath id='cpMzEuODR8MjcxLjQxfDkuODB8MTQ4Ljc3'>
+    <rect x='31.84' y='9.80' width='239.57' height='138.97' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMzIuMTZ8MjY5LjU0fDkuODB8MTQ4LjY2)'>
-<polyline points='32.16,142.64 269.54,142.64 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
-<polyline points='32.16,103.85 269.54,103.85 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
-<polyline points='32.16,65.05 269.54,65.05 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
-<polyline points='32.16,26.26 269.54,26.26 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
-<polyline points='42.95,39.20 56.72,45.85 69.59,25.77 83.36,42.77 96.68,33.37 110.44,27.32 123.76,64.55 137.53,59.28 151.29,35.84 164.61,21.88 178.38,63.24 191.70,80.32 205.46,88.41 219.23,87.61 231.66,82.12 245.43,90.45 258.75,96.01 ' style='stroke-width: 1.07; stroke: #4068B8; stroke-linecap: butt;' />
-<polyline points='42.95,79.07 56.72,43.11 69.59,61.31 83.36,73.42 96.68,62.46 110.44,84.13 123.76,90.42 137.53,102.54 151.29,90.21 164.61,68.18 178.38,102.40 191.70,127.71 205.46,138.55 219.23,141.81 231.66,142.52 245.43,142.57 258.75,142.49 ' style='stroke-width: 1.07; stroke: #5CB8B2; stroke-linecap: butt;' />
-<polyline points='42.95,89.13 56.72,59.09 69.59,69.20 83.36,50.03 96.68,44.33 110.44,43.10 123.76,40.39 137.53,80.06 151.29,73.27 164.61,59.02 178.38,74.54 191.70,80.78 205.46,99.84 219.23,129.15 231.66,134.47 245.43,139.77 ' style='stroke-width: 1.07; stroke: #DD5C64; stroke-linecap: butt;' />
-<polyline points='42.95,57.53 56.72,46.06 69.59,52.42 83.36,70.65 96.68,60.22 110.44,51.44 123.76,90.09 137.53,97.12 151.29,65.83 164.61,66.91 178.38,108.11 191.70,131.03 205.46,138.32 219.23,142.05 231.66,142.39 245.43,142.59 258.75,142.62 ' style='stroke-width: 1.07; stroke: #FFB81C; stroke-linecap: butt;' />
+<g clip-path='url(#cpMzEuODR8MjcxLjQxfDkuODB8MTQ4Ljc3)'>
+<polyline points='31.84,142.74 271.41,142.74 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
+<polyline points='31.84,103.92 271.41,103.92 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
+<polyline points='31.84,65.10 271.41,65.10 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
+<polyline points='31.84,26.27 271.41,26.27 ' style='stroke-width: 0.53; stroke: #D9E0F1; stroke-linecap: butt;' />
+<polyline points='42.73,39.22 56.62,45.88 69.62,25.78 83.51,42.80 96.95,33.38 110.84,27.33 124.29,64.59 138.18,59.32 152.07,35.86 165.52,21.89 179.41,63.29 192.85,80.38 206.74,88.47 220.64,87.67 233.18,82.18 247.07,90.52 260.52,96.08 ' style='stroke-width: 1.07; stroke: #4068B8; stroke-linecap: butt;' />
+<polyline points='42.73,79.12 56.62,43.13 69.62,61.35 83.51,73.47 96.95,62.50 110.84,84.18 124.29,90.49 138.18,102.61 152.07,90.27 165.52,68.22 179.41,102.47 192.85,127.80 206.74,138.65 220.64,141.91 233.18,142.62 247.07,142.67 260.52,142.60 ' style='stroke-width: 1.07; stroke: #5CB8B2; stroke-linecap: butt;' />
+<polyline points='42.73,89.19 56.62,59.12 69.62,69.25 83.51,50.06 96.95,44.36 110.84,43.12 124.29,40.42 138.18,80.12 152.07,73.32 165.52,59.06 179.41,74.59 192.85,80.83 206.74,99.91 220.64,129.24 233.18,134.57 247.07,139.87 ' style='stroke-width: 1.07; stroke: #DD5C64; stroke-linecap: butt;' />
+<polyline points='42.73,57.56 56.62,46.09 69.62,52.45 83.51,70.69 96.95,60.26 110.84,51.47 124.29,90.16 138.18,97.19 152.07,65.87 165.52,66.95 179.41,108.19 192.85,131.13 206.74,138.42 220.64,142.16 233.18,142.49 247.07,142.69 260.52,142.73 ' style='stroke-width: 1.07; stroke: #FFB81C; stroke-linecap: butt;' />
 </g>
 <g clip-path='url(#cpMC4wMHwzNDAuMTZ8MC4wMHwxNzAuMDg=)'>
-<text x='27.23' y='145.14' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='4.00px' lengthAdjust='spacingAndGlyphs'>0</text>
-<text x='27.23' y='106.34' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>10</text>
-<text x='27.23' y='67.55' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>20</text>
-<text x='27.23' y='28.76' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='8.01px' lengthAdjust='spacingAndGlyphs'>30</text>
-<text x='69.59' y='158.59' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='30.91px' lengthAdjust='spacingAndGlyphs'>Mar 2024</text>
-<text x='110.44' y='158.59' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='28.30px' lengthAdjust='spacingAndGlyphs'>Jun 2024</text>
-<text x='151.29' y='158.59' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='29.89px' lengthAdjust='spacingAndGlyphs'>Sep 2024</text>
-<text x='191.70' y='158.59' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='30.20px' lengthAdjust='spacingAndGlyphs'>Dec 2024</text>
-<text x='231.66' y='158.59' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='30.91px' lengthAdjust='spacingAndGlyphs'>Mar 2025</text>
-<text transform='translate(14.80,79.23) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='72.38px' lengthAdjust='spacingAndGlyphs'>Thousands of persons</text>
-<line x1='276.41' y1='68.77' x2='287.57' y2='68.77' style='stroke-width: 1.07; stroke: #4068B8; stroke-linecap: butt;' />
-<line x1='276.41' y1='75.75' x2='287.57' y2='75.75' style='stroke-width: 1.07; stroke: #DD5C64; stroke-linecap: butt;' />
-<line x1='276.41' y1='82.72' x2='287.57' y2='82.72' style='stroke-width: 1.07; stroke: #5CB8B2; stroke-linecap: butt;' />
-<line x1='276.41' y1='89.69' x2='287.57' y2='89.69' style='stroke-width: 1.07; stroke: #FFB81C; stroke-linecap: butt;' />
-<text x='291.41' y='71.27' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='31.10px' lengthAdjust='spacingAndGlyphs'>Colombia</text>
-<text x='291.41' y='78.24' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='23.10px' lengthAdjust='spacingAndGlyphs'>Mexico</text>
-<text x='291.41' y='85.22' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='32.23px' lengthAdjust='spacingAndGlyphs'>Honduras</text>
-<text x='291.41' y='92.19' style='font-size: 7.00px;fill: #0033A0; font-family: "Open Sans";' textLength='26.70px' lengthAdjust='spacingAndGlyphs'>Panama</text>
+<text x='26.91' y='145.26' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='3.90px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='26.91' y='106.43' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='7.79px' lengthAdjust='spacingAndGlyphs'>10</text>
+<text x='26.91' y='67.61' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='7.79px' lengthAdjust='spacingAndGlyphs'>20</text>
+<text x='26.91' y='28.78' text-anchor='end' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='7.79px' lengthAdjust='spacingAndGlyphs'>30</text>
+<text x='69.62' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.58px' lengthAdjust='spacingAndGlyphs'>Mar 2024</text>
+<text x='110.84' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='28.81px' lengthAdjust='spacingAndGlyphs'>Jun 2024</text>
+<text x='152.07' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.98px' lengthAdjust='spacingAndGlyphs'>Sep 2024</text>
+<text x='192.85' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.97px' lengthAdjust='spacingAndGlyphs'>Dec 2024</text>
+<text x='233.18' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.58px' lengthAdjust='spacingAndGlyphs'>Mar 2025</text>
+<text transform='translate(14.83,79.29) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='69.29px' lengthAdjust='spacingAndGlyphs'>Thousands of persons</text>
+<line x1='278.28' y1='68.83' x2='289.44' y2='68.83' style='stroke-width: 1.07; stroke: #4068B8; stroke-linecap: butt;' />
+<line x1='278.28' y1='75.80' x2='289.44' y2='75.80' style='stroke-width: 1.07; stroke: #DD5C64; stroke-linecap: butt;' />
+<line x1='278.28' y1='82.77' x2='289.44' y2='82.77' style='stroke-width: 1.07; stroke: #5CB8B2; stroke-linecap: butt;' />
+<line x1='278.28' y1='89.75' x2='289.44' y2='89.75' style='stroke-width: 1.07; stroke: #FFB81C; stroke-linecap: butt;' />
+<text x='293.29' y='71.34' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.58px' lengthAdjust='spacingAndGlyphs'>Colombia</text>
+<text x='293.29' y='78.31' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='22.18px' lengthAdjust='spacingAndGlyphs'>Mexico</text>
+<text x='293.29' y='85.29' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='30.36px' lengthAdjust='spacingAndGlyphs'>Honduras</text>
+<text x='293.29' y='92.26' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='26.08px' lengthAdjust='spacingAndGlyphs'>Panama</text>
 </g>
 </svg>
