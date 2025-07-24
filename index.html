@@ -17,12 +17,43 @@
 
 <body>
     
-    <header>
-        <div class="brand">
-         <a href="." class="logo-container">
-            <img src="./assets/images/logo.svg">
-         </a>
-        </div>
+    <header id="header" class="header" role="banner">
+
+        <nav class="navbar" id="navbar-top">
+
+            <div class="container">
+                <section class="">
+                    <div class="region-top-header">
+                        <a href="https://lac.iom.int/" class="navbar-brand">
+                            <img src="./assets/images/logo.svg">
+                        </a>
+                        <div class="site-name-slogan ml-2 d-md-inline-block d-none">
+                            Latin America and the Caribbean
+                        </div>
+                    </div>
+                </section>
+
+                <div class="navbar-form ml-auto">
+                    <section class="region-top-header-form">
+
+                        <nav class="nav links">
+                            <span hreflang="en" class="en nav-link is-active">
+                                <a href="" class="language-link is-active" hreflang="en">en</a>
+                            </span>
+                            <span hreflang="es" class="es nav-link">
+                                <a href="" class="language-link" hreflang="es">es</a>
+                            </span>
+                        </nav>
+
+                        <div id="block-iom2025-donatebutton">
+                            <a class="btn" href="https://donate.iom.int/" target="_blank">Donate</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </nav>
+
      </header>
 
     <main class="home content-grid">
@@ -74,10 +105,30 @@
 
     </main>
 
-    <footer>
-        <div class="copyright">
-            Copyright © 2025 International Organization for Migration
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="copyright-and-legal col-md-6">
+                <p class="copyright">Copyright © 2025 International Organization for Migration</p>
+            </div>
+    
+            <nav role="navigation" class="col-md-6">
+                <ul class="nav">
+                    <li class="nav-items">
+                        <a href="https://weareallin.iom.int/" class="footer-link nav-link nav-link-https--wearealliniomint-" target="_blank">Report Abuse, Fraud or Misconduct</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="https://www.iom.int/report-cybersecurity-issue" class="footer-link nav-link nav-link-https--wwwiomint-report-cybersecurity-issue" target="_blank">Cybersecurity Issues</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="https://www.iom.int/terms-and-conditions" class="footer-link nav-link nav-link-https--wwwiomint-terms-and-conditions" target="_blank">Terms &amp; Conditions</a>
+                    </li>
+                </ul>
+            </nav>
+
         </div>
+
     </footer>
 
     <script type="module" src="./assets/js/main.js"></script>
