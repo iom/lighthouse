@@ -36,7 +36,6 @@ export const colors = {
 
 export const geos = {
     "ARG": "Argentina",
-    "BOL": "Bolivia",
     "BRA": "Brazil",
     "COL": "Colombia",
     "CRI": "Costa Rica",
