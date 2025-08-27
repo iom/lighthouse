@@ -333,6 +333,10 @@ nav.links .nav-link:not(:last-of-type):after {
     margin-left: -0.9375rem;
 }
 
+.nav-link {
+    padding: .1875rem 0;
+}
+
 .language-link {
     padding: 0 .625rem !important;
     font-size: .625em;

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venezuela | ONU Migración Americas</title>
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="assets/js/topojson.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+
+<body>
+    
+    <header id="header" class="header" role="banner">
+
+        <nav class="navbar" id="navbar-top">
+
+            <div class="container">
+                <section class="">
+                    <div class="region-top-header">
+                        <a href="https://lac.iom.int/" class="navbar-brand">
+                            <img src="../assets/images/logo.svg">
+                        </a>
+                        <div class="site-name-slogan ml-2 d-md-inline-block d-none">
+                            Oficina Regional para América Latina y el Caribe
+                        </div>
+                    </div>
+                </section>
+
+                <div class="navbar-form ml-auto">
+                    <section class="region-top-header-form">
+
+                        <nav class="nav links">
+                            <span hreflang="en" class="en nav-link">
+                                <a href="index.html" class="language-link" hreflang="en">en</a>
+                            </span>
+                            <span hreflang="es" class="es nav-link">
+                                <span class="language-link is-active">es</span>
+                            </span>
+                        </nav>
+
+                        <div id="block-iom2025-donatebutton">
+                            <a class="btn" href="https://donate.iom.int/" target="_blank">Donar</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </nav>
+
+     </header>
+
+    <main class="deep-dive content-grid">
+       
+        <div class="title-block full-width">
+            <div class="title-block-contents breakout">
+                <a href="../index_es.html">
+                    <h1>Patrones de movilidad en las Américas</h1>
+                    <p class="subtitle">Un panorama en base a datos administrativos</p>
+                </a>
+            </div>
+        </div>
+        
+        <h1>Venezuela</h1>
+        <div class="date par">
+            <svg class="svg-inline--fa fa-clock" aria-hidden="true" focusable="false" data-prefix="far" data-icon="clock" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg="">
+                <path fill="currentColor" d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"></path>
+            </svg>
+            Jun 20 2025
+        </div>
+
+        <section class="highlights">
+
+            <h3>Principales hallazgos</h3>
+            <ul>
+                <li>Los movimientos registrados de venezolanos han cambiado, las entradas regulares en Colombia aumentaron un 20% en 2024 respecto a 2023 y se mantuvieron entre un 40% y 70% por encima durante el primer trimestre de 2025.</li>
+                <li>En Ecuador, las entradas regulares de venezolanos disminuyeron un 72% en 2024, y en México se redujeron un 18%.</li>
+                <li>Las entradas irregulares de venezolanos en México han disminuido, en febrero de 2025 se registraron 3.478, la cifra mensual más baja desde mediados de 2022. En contraste, las entradas regulares en Colombia y Brasil aumentaron, lo que sugiere que más migrantes optan por canales formales y destinos más cercanos dentro de Sudamérica.</li>
+                <li>Entre enero de 2022 y marzo de 2025, Brasil (+375.000) y Colombia (+61.500) registraron los mayores flujos netos de venezolanos, consolidándose como los principales destinos para esta población.</li>
+            </ul>
+
+        </section>
+
+        <p>En los últimos años, el desplazamiento de nacionales venezolanos se ha consolidado como una de las dinámicas migratorias más significativas y complejas en las Américas, con profundas implicaciones humanitarias y de política pública. Para diciembre de 2024, <a href="https://www.r4v.info/es">más de 7,89 millones de venezolanos habían abandonado su país</a>, configurando una de las mayores crisis de desplazamiento a nivel mundial. Comprender la evolución de estos patrones resulta fundamental para la formulación de políticas informadas y para respuestas humanitarias más eficaces. Con este fin, el presente análisis utiliza los datos administrativos consolidados para examinar los cambios recientes en la movilidad de población venezolana en la región.</p>
+
+        <h3>Patrones de movilidad venezolana en las Américas</h3>
+
+        <p>Los registros de entradas regulares reflejan los movimientos captados a través de procedimientos administrativos oficiales y, por tanto, no reflejan la migración irregular. Los registros de entradas contabilizan movimientos y no personas únicas; una misma persona que cruza varias veces queda registrada en cada ocasión. Pese a estas limitaciones, constituyen una fuente crítica debido a su frecuencia, consistencia y cobertura geográfica, lo que permite un análisis frecuente de los cambios en la movilidad entre países.</p>
+
+        <p>Del análisis de entradas regulares de nacionales venezolanos en las Américas se desprenden dos tendencias principales:</p>
+
+        <div id="fig1" class="chart">
+            <div class="chart-title">Ingresos regulares de venezolanos a países de América, 2022-2025</div>
+            <div class="panel">
+                <img src="../assets/images/venezuela-1.svg">
+            </div>
+            <div class="chart-source">Fuente: Programa Faro de la OIM.</div>
+            <div class="chart-caption"></div>
+        </div>
+        
+        <p>Entre 2022 y 2025 (período de cobertura de los datos), varios países registraron incrementos significativos en el número de entradas de nacionales venezolanos. México presentó un patrón particularmente distintivo, tras mantener niveles relativamente estables durante el primer semestre de 2024, los registros administrativos muestran un marcado aumento a partir de julio de ese año, alcanzando en diciembre de 2024 un pico cercano a 11.600 entradas, la cifra mensual más alta observada en ese periodo. Un incremento tan repentino y pronunciado resulta atípico si se consideran los patrones de movimiento de los años previos.</p>
+
+        <p>Si bien las motivaciones detrás de estos movimientos no pueden confirmarse únicamente a partir de los datos administrativos, su cronología <a href="https://www.migrationpolicy.org/research/four-years-change-immigration-trump">coincide</a> con el regreso anticipado a la presidencia de Estados Unidos de Donald Trump, asociado con políticas migratorias más estrictas y una intensificación del control fronterizo. Tras la implementación de estas medidas y un aumento en las deportaciones, el número de venezolanos ingresando a México disminuyó drásticamente. Incapaces de acceder a territorio estadounidense, muchos migrantes venezolanos comenzaron a <a href="https://www.reuters.com/world/americas/reverse-migration-venezuelans-head-back-toward-south-america-after-us-dreams-2025-02-24/?utm_source">desplazarse nuevamente hacia el sur</a>. Esta variación también se refleja en los datos, después de alcanzar su punto máximo en diciembre de 2024, las entradas cayeron a alrededor de 4.700 en febrero de 2025, retornando a niveles similares a los observados antes de mediados de 2024.</p>
+
+        <p>Para contextualizar mejor estas nuevas dinámicas, a continuación, se presentan comparaciones entre las entradas de venezolanos en 2024 frente a 2023:</p>
+
+        <div id="tab1" class="chart">
+            <div class="chart-title">Cambio en las entradas regulares, 2024 vs 2023</div>
+            <div class="panel">
+                <img src="../assets/images/venezuela-2.svg">
+            </div>
+            <div class="chart-source">Fuente: Programa Faro de la OIM.</div>
+            <div class="chart-caption"></div>
+        </div>
+
+        <p>En 2024, Colombia registró el mayor incremento anual de entradas regulares de venezolanos en comparación con 2023 (+94.979; +20%). Costa Rica y Guatemala también mostraron aumentos cercanos al +19 % (aprox. +2.100 y +1.100 entradas, respectivamente). Perú (+6%) y Brasil (+5%) reflejaron crecimientos más moderados. En contraste, Ecuador presentó la caída más pronunciada (-73.425; –72%), mientras que México (-18.786; –18%) y Argentina (-13.768; –7%) también experimentaron reducciones significativas. En conjunto, los datos indican que una proporción creciente de los movimientos regulares de venezolanos se concentra en Colombia y destinos cercanos, mientras que en Ecuador y México se observa una disminución marcada.</p>
+        
+        <p>Las cifras de inicios de 2025 refuerzan esta redistribución. En el primer trimestre del año, Colombia mantuvo un fuerte aumento interanual: +42% en enero, +41% en febrero y +68% en marzo frente a los mismos meses de 2024. Brasil continuó con incrementos moderados (entre 6% y 8% mensuales), y Honduras se mantuvo prácticamente estable. En México, las entradas de enero aún fueron +36% superiores al año anterior, pero descendieron en febrero (-13%) y marzo (-1%). Ecuador, Costa Rica y Perú registraron caídas mensuales consecutivas que oscilaron entre 4% y 26%. Estos patrones confirman la creciente concentración de llegadas en Colombia en 2025, mientras que las entradas en Ecuador y México permanecieron en niveles reducidos.</p>
+
+        <div id="fig2" class="chart">
+            <div class="chart-title">Ingresos irregulares de venezolanos a países de América, 2024-2025</div>
+            <div class="panel">
+                <img src="../assets/images/venezuela-3.svg">
+            </div>
+            <div class="chart-source">Fuente: Programa Faro de la OIM.</div>
+            <div class="chart-caption"></div>
+        </div>
+
+        <p>Finalmente, el análisis de los datos disponibles sobre entradas irregulares ofrece información adicional sobre los cambios en las dinámicas de movilidad. En los últimos dos años, las entradas irregulares de nacionales venezolanos han disminuido de forma sostenida. En México, alcanzaron en febrero de 2025 su nivel más bajo desde mediados de 2022, con 3.478 cruces registrados. Lo mismo ocurrió en Panamá, donde las entradas irregulares a través del Darién cayeron a 151 en febrero de 2025, la cifra más baja de los últimos tres años. La disminución simultánea de las entradas irregulares y el aumento de las entradas regulares en Sudamérica sugiere un posible reajuste en los patrones de movilidad, con una mayor utilización de canales formales y/o destinos más cercanos dentro de la región. Una tendencia que se alinea con medidas migratorias más estrictas a nivel regional y con el aumento de flujos norte-sur señalada en <a href="https://dtm.iom.int/reports/latin-america-and-caribbean-lac-spotlight-returns-lac-region-north-south-flow-monitoring-20">reportes recientes de la OIM</a>.</p>
+
+        <h3>¿Dónde se están quedando los venezolanos?</h3>
+
+        <p>Comprender no solo hacia dónde se desplazan los nacionales venezolanos, sino también dónde permanecen, requiere una perspectiva distinta. Mientras que las entradas regulares reflejan movimientos fronterizos, el flujo neto acumulado, calculado como la diferencia acumulada en el tiempo entre entradas y salidas regulares, ofrece una aproximación a la evolución de la presencia migrante en los distintos países de la región.</p>
+
+        <div id="fig3" class="chart">
+            <div class="chart-title">Acumulación neta de venezolanos en países de América, 2023-2025</div>
+            <div class="panel">
+                <img src="../assets/images/venezuela-4.svg">
+            </div>
+            <div class="chart-source">Fuente: Programa Faro de la OIM.</div>
+            <div class="chart-caption"></div>
+        </div>
+
+        <p>Desde enero de 2022, tres países se han consolidado como destinos clave para las personas venezolanas en función de los datos de flujo neto acumulado. Brasil registró el mayor saldo neto, con más de 375.000 entradas que superaron a las salidas. Le siguieron Colombia, con aproximadamente 61.500, y Ecuador, con 38.500. Si bien estas cifras no miden directamente la permanencia a largo plazo, sí reflejan una movilidad regular sostenida hacia estos países a lo largo del tiempo, subrayando su relevancia continua para las personas venezolanas que enfrentan desplazamiento prolongado, limitaciones para retornar y cambios en las políticas migratorias de la región.</p>
+
+        <p>En contraste, Perú presenta una disminución notable en el flujo neto acumulado, este se redujo en aproximadamente 60.000 personas en los últimos tres años. Si Perú funcionara únicamente como país de tránsito, se esperaría que las entradas y salidas se equilibraran, generando un cambio mínimo en la población migrante acumulada. Sin embargo, la tendencia descendente observada desde 2021 sugiere que Perú podría estar dejando de ser un destino de asentamiento para venezolanos en la región.</p>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="copyright-and-legal col-md-6">
+                <p class="copyright">Derechos de autor © 2025 Organización Internacional para las Migraciones</p>
+            </div>
+    
+            <nav role="navigation" class="col-md-6">
+                <ul class="nav">
+                    <li class="nav-items">
+                        <a href="https://weareallin.iom.int/" class="footer-link nav-link nav-link-https--wearealliniomint-" target="_blank">Reportar abuso</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="https://www.iom.int/report-cybersecurity-issue" class="footer-link nav-link nav-link-https--wwwiomint-report-cybersecurity-issue" target="_blank">Problemas de seguridad informática</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="https://www.iom.int/terms-and-conditions" class="footer-link nav-link nav-link-https--wwwiomint-terms-and-conditions" target="_blank">Términos y condiciones</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+
+</body>
+</html>

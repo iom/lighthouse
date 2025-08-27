@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrones de movilidad en las Américas | ONU Migración Americas</title>
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="assets/js/topojson.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
+</head>
+
+<body>
+    
+    <header id="header" class="header" role="banner">
+
+        <nav class="navbar" id="navbar-top">
+
+            <div class="container">
+                <section class="">
+                    <div class="region-top-header">
+                        <a href="https://lac.iom.int/" class="navbar-brand">
+                            <img src="./assets/images/logo.svg">
+                        </a>
+                        <div class="site-name-slogan ml-2 d-md-inline-block d-none">
+                            Oficina Regional para América Latina y el Caribe
+                        </div>
+                    </div>
+                </section>
+
+                <div class="navbar-form ml-auto">
+                    <section class="region-top-header-form">
+
+                        <nav class="nav links">
+                            <span hreflang="en" class="en nav-link">
+                                <a href="index.html" class="language-link" hreflang="en">en</a>
+                            </span>
+                            <span hreflang="es" class="es nav-link">
+                                <span class="language-link is-active">es</span>
+                            </span>
+                        </nav>
+
+                        <div id="block-iom2025-donatebutton">
+                            <a class="btn" href="https://donate.iom.int/" target="_blank">Donar</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+        </nav>
+
+     </header>
+
+    <main class="home content-grid">
+
+        <div class="title-block full-width">
+            <div class="title-block-contents breakout">
+                <h1>Patrones de movilidad en las Américas</h1>
+                <p class="subtitle">Un panorama en base a datos administrativos</p>
+            </div>
+        </div>
+
+        <div class="dashboard-title">Placeholder title</div>
+        <div class="dashboard-container breakout">
+            <div class="tabs">
+                <div class="tab active" tabindex="0" data-chart="map">Nationalities</div>
+                <div class="tab" tabindex="1" data-chart="grid">Trends</div>
+            </div>
+
+            <div class="mainview"></div>
+
+            <div class="dashboard-caption">El mapa es solo para fines ilustrativos. Los límites, los nombres y las designaciones que se muestran no implican la aprobación ni la aceptación oficial por parte de la OIM.<emph>Nacionalidad</emph>: Se refiere al vínculo jurídico entre una persona y un Estado, y a menudo se utiliza de manera intercambiable con “ciudadanía” para designar a quien posee la nacionalidad o ciudadanía de dicho Estado (<a href="https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf">OIM, 2019</a>). <emph>Entrada regular</emph>: Acto de ingresar a un país a través de un puesto fronterizo oficial, en cumplimiento de los requisitos de entrada y procedimientos administrativos del Estado. <emph>Salida regular</emph>: Acto de salir de un país a través de un puesto fronterizo oficial, en cumplimiento de los requisitos de salida y procedimientos administrativos del Estado. <emph>Entrada irregular</emph>: Entrada de una persona que cruza o ha cruzado una frontera internacional sin autorización para ingresar o permanecer en un Estado conforme a la legislación de ese Estado y a los acuerdos internacionales de los que ese Estado es parte (adaptado de <a href="https://publications.iom.int/system/files/pdf/iml_34_glossary.pdf">OIM, 2019</a>). <strong>Los datos incluyen únicamente a no nacionales para garantizar la comparabilidad entre los países que informan.</strong></div>
+        </div>
+        
+        <p>La movilidad humana en las Américas está impulsada por una intersección de factores políticos, económicos, ambientales y normativos, que dan lugar a patrones complejos de migración y movilidad. A pesar de la riqueza del panorama regional en materia de datos migratorios, la información suele presentarse de manera fragmentada, con inconsistencias y dificultades para el análisis comparativo entre países. Para contribuir a cerrar estas brechas, el Programa Lighthouse de la OIM (Iniciativa Integral de Datos en las Américas, implementada con el apoyo de la Oficina de Población, Refugiados y Migración del Departamento de Estado de los Estados Unidos) trabaja en la consolidación y armonización de fuentes secundarias de datos, incluidas aquellas de carácter administrativo como son los registros de entradas y salidas fronterizas que recopilan los gobiernos. El resultado es una base de datos regional que permite analizar mes a mes los patrones de movilidad en las Américas, desagregados por nacionalidad. La información se obtiene a partir de plataformas oficiales de acceso público y, en algunos casos, mediante intercambio directo entre la OIM y las autoridades nacionales.</p>
+
+        <p>Este informe interactivo presenta el conjunto de datos administrativos consolidados a través de un mapa dinámico, que permite explorar los patrones de movilidad por país, indicadores y periodos de tiempo. El mapa muestra, para cada país y año seleccionados, la composición y magnitud de las entradas, salidas o entradas irregulares (los países que reportan datos de entradas irregulares son: Colombia, México, Panamá y Honduras) registradas por nacionalidad. De manera complementaria, este reporte incluye un análisis enfocado en las principales tendencias de la movilidad venezolana, ofreciendo elementos de contexto para facilitar la interpretación de los datos.</p>
+
+        <h2>Análisis focalizados</h2>
+
+        <div class="tiles">
+
+            <a href="venezuela/index_es.html">
+                <div class="tile">
+                    <div class="thumbnail">
+                        <img src="./assets/images/thumbnail-venezuela.jpg">
+                    </div>
+                    <div class="title">Venezuela</div>
+                    <div class="desc">Los registros de entradas regulares muestran cómo la movilidad venezolana está reconfigurando la región: en 2024, Colombia registró un 20 % más de entradas de nacionales venezolanos en comparación con 2023 y mantuvo un crecimiento sostenido a inicios de 2025; Brasil siguió con aumentos constantes, mientras que Ecuador y México presentaron descensos de dos dígitos. En el caso de México, las entradas irregulares de venezolanos cayeron a su nivel más bajo desde 2022.</div>
+                </div>
+            </a>
+
+            <div class="tile empty">
+                
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="copyright-and-legal col-md-6">
+                <p class="copyright">Derechos de autor © 2025 Organización Internacional para las Migraciones</p>
+            </div>
+    
+            <nav role="navigation" class="col-md-6">
+                <ul class="nav">
+                    <li class="nav-items">
+                        <a href="https://weareallin.iom.int/" class="footer-link nav-link nav-link-https--wearealliniomint-" target="_blank">Reportar abuso</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="https://www.iom.int/report-cybersecurity-issue" class="footer-link nav-link nav-link-https--wwwiomint-report-cybersecurity-issue" target="_blank">Problemas de seguridad informática</a>
+                    </li>
+                    <li class="nav-items">
+                        <a href="https://www.iom.int/terms-and-conditions" class="footer-link nav-link nav-link-https--wwwiomint-terms-and-conditions" target="_blank">Términos y condiciones</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </footer>
+
+    <script type="module" src="./assets/js/main.js"></script>
+
+</body>
+</html>
