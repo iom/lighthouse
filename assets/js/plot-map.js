@@ -133,13 +133,15 @@ function drawMap(map, nats) {
 
         } else {
 
+            let dir = varSelect === "regout" ? "from" : "to";
+            
             const text = (d) => {
                 if (d.properties.iso3c === geoSelect) {
                     return `${ d.properties.english } (reporting country)`;
                 } else {
                     return `
                         <span class='value'>${ d3.format(",.0f")(+d.n) }</span>
-                        <br>${ varText } from ${ d.label }
+                        <br>${ varText } ${ dir } ${ d.label }
                     `;
                 }
             }
@@ -181,7 +183,6 @@ function drawMap(map, nats) {
             d.n > 0
         );
         
-        
         let dataJoin = map.map(a => {
             const match = data.find(b => b.nat === a.properties.iso3c);
             return {
@@ -216,8 +217,9 @@ function drawMap(map, nats) {
             .on("mouseleave", mouseLeft);
         
         const title = d3.select(".dashboard-title");
+        let dir = varSelect === "regout" ? "from" : "to";
         title.text(`
-            Nationalities of ${ varText } to ${ util.geos[geoSelect] }, ${ yearSelect }
+            Nationalities of ${ varText } ${ dir } ${ util.geos[geoSelect] }, ${ yearSelect }
         `);
 
         panelSVG.select("#color-legend").remove();
