@@ -47,6 +47,19 @@ export const geos = {
     "PER": "Peru"
 }
 
+export const geosES = {
+    "ARG": "Argentina",
+    "BRA": "Brasil",
+    "COL": "Colombia",
+    "CRI": "Costa Rica",
+    "ECU": "Ecuador",
+    "GTM": "Guatemala",
+    "HND": "Honduras",
+    "MEX": "México",
+    "PAN": "Panamá",
+    "PER": "Perú"
+}
+
 export const nats = [
     "Total",
     "Argentina",
@@ -71,6 +84,32 @@ export const nats = [
     "Europe",
     "Oceania",
     "Unknown"
+]
+
+export const natsES = [
+    "Total",
+    "Argentina",
+    "República Bolivariana de Venezuela",
+    "Brasil",
+    "Canadá",
+    "Colombia",
+    "República Dominicana",
+    "Cuba",
+    "Ecuador",
+    "El Salvador",
+    "Guatemala",
+    "Haiti",
+    "Honduras",
+    "México",
+    "Nicaragua",
+    "Panamá",
+    "Estados Unidos de América",
+    "Otras Américas",
+    "África",
+    "Asia",
+    "Europa",
+    "Oceanía",
+    "Desconocido"
 ]
 
 export function formatNumAxis(num) {
