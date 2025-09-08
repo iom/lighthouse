@@ -51,7 +51,7 @@
 <text x='126.27' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='15.58px' lengthAdjust='spacingAndGlyphs'>2023</text>
 <text x='207.22' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='15.58px' lengthAdjust='spacingAndGlyphs'>2024</text>
 <text x='288.39' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='15.58px' lengthAdjust='spacingAndGlyphs'>2025</text>
-<text transform='translate(14.83,79.29) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='34.65px' lengthAdjust='spacingAndGlyphs'>Thousands</text>
+<text transform='translate(14.83,79.29) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='56.82px' lengthAdjust='spacingAndGlyphs'>Miles de personas</text>
 <line x1='335.36' y1='61.85' x2='346.52' y2='61.85' style='stroke-width: 1.07; stroke: #4068B8; stroke-linecap: butt;' />
 <line x1='335.36' y1='68.83' x2='346.52' y2='68.83' style='stroke-width: 1.07; stroke: #B3C2E3; stroke-linecap: butt;' />
 <line x1='335.36' y1='75.80' x2='346.52' y2='75.80' style='stroke-width: 1.07; stroke: #DD5C64; stroke-linecap: butt;' />
@@ -59,8 +59,8 @@
 <line x1='335.36' y1='89.75' x2='346.52' y2='89.75' style='stroke-width: 1.07; stroke: #5CB8B2; stroke-linecap: butt;' />
 <line x1='335.36' y1='96.72' x2='346.52' y2='96.72' style='stroke-width: 1.07; stroke: #FFB81C; stroke-linecap: butt;' />
 <text x='350.37' y='64.36' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.58px' lengthAdjust='spacingAndGlyphs'>Colombia</text>
-<text x='350.37' y='71.34' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='22.18px' lengthAdjust='spacingAndGlyphs'>Mexico</text>
-<text x='350.37' y='78.31' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='17.50px' lengthAdjust='spacingAndGlyphs'>Brazil</text>
+<text x='350.37' y='71.34' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='22.18px' lengthAdjust='spacingAndGlyphs'>México</text>
+<text x='350.37' y='78.31' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='17.50px' lengthAdjust='spacingAndGlyphs'>Brasil</text>
 <text x='350.37' y='85.29' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='26.08px' lengthAdjust='spacingAndGlyphs'>Ecuador</text>
 <text x='350.37' y='92.26' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='14.79px' lengthAdjust='spacingAndGlyphs'>Peru</text>
 <text x='350.37' y='99.23' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.97px' lengthAdjust='spacingAndGlyphs'>Argentina</text>

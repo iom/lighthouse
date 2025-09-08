@@ -78,12 +78,12 @@
 <text x='299.40' y='150.37' text-anchor='middle' style='font-size: 6.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.33px' lengthAdjust='spacingAndGlyphs'>Guatemala</text>
 <text x='335.00' y='150.37' text-anchor='middle' style='font-size: 6.00px;fill: #0033A0; font-family: "Helvetica";' textLength='26.01px' lengthAdjust='spacingAndGlyphs'>Honduras</text>
 <text x='370.59' y='150.37' text-anchor='middle' style='font-size: 6.00px;fill: #0033A0; font-family: "Helvetica";' textLength='22.67px' lengthAdjust='spacingAndGlyphs'>Uruguay</text>
-<text transform='translate(9.93,71.79) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='23.34px' lengthAdjust='spacingAndGlyphs'>Millions</text>
-<rect x='142.86' y='161.49' width='7.30' height='7.30' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3C2E3;' />
+<text transform='translate(9.93,71.79) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='66.17px' lengthAdjust='spacingAndGlyphs'>Millones de personas</text>
+<rect x='123.01' y='161.49' width='7.30' height='7.30' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #B3C2E3;' />
 <rect x='190.72' y='161.49' width='7.30' height='7.30' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #8099D0;' />
-<rect x='238.57' y='161.49' width='7.30' height='7.30' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4068B8;' />
-<text x='153.32' y='167.66' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.98px' lengthAdjust='spacingAndGlyphs'>End 2023</text>
-<text x='201.18' y='167.66' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.98px' lengthAdjust='spacingAndGlyphs'>End 2024</text>
-<text x='249.03' y='167.66' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='28.42px' lengthAdjust='spacingAndGlyphs'>Apr 2025</text>
+<rect x='258.42' y='161.49' width='7.30' height='7.30' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #4068B8;' />
+<text x='133.47' y='167.66' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='49.83px' lengthAdjust='spacingAndGlyphs'>Finales de 2023</text>
+<text x='201.18' y='167.66' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='49.83px' lengthAdjust='spacingAndGlyphs'>Finales de 2024</text>
+<text x='268.88' y='167.66' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='28.42px' lengthAdjust='spacingAndGlyphs'>Apr 2025</text>
 </g>
 </svg>

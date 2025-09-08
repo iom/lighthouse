@@ -48,14 +48,14 @@
 <text x='180.52' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.98px' lengthAdjust='spacingAndGlyphs'>Sep 2024</text>
 <text x='230.95' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.97px' lengthAdjust='spacingAndGlyphs'>Dec 2024</text>
 <text x='280.83' y='158.73' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.58px' lengthAdjust='spacingAndGlyphs'>Mar 2025</text>
-<text transform='translate(14.83,79.29) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='34.65px' lengthAdjust='spacingAndGlyphs'>Thousands</text>
+<text transform='translate(14.83,79.29) rotate(-90)' text-anchor='middle' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='56.82px' lengthAdjust='spacingAndGlyphs'>Miles de personas</text>
 <line x1='334.97' y1='68.83' x2='346.13' y2='68.83' style='stroke-width: 1.07; stroke: #4068B8; stroke-linecap: butt;' />
 <line x1='334.97' y1='75.80' x2='346.13' y2='75.80' style='stroke-width: 1.07; stroke: #DD5C64; stroke-linecap: butt;' />
 <line x1='334.97' y1='82.77' x2='346.13' y2='82.77' style='stroke-width: 1.07; stroke: #5CB8B2; stroke-linecap: butt;' />
 <line x1='334.97' y1='89.75' x2='346.13' y2='89.75' style='stroke-width: 1.07; stroke: #FFB81C; stroke-linecap: butt;' />
 <text x='349.98' y='71.34' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='29.58px' lengthAdjust='spacingAndGlyphs'>Colombia</text>
-<text x='349.98' y='78.31' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='22.18px' lengthAdjust='spacingAndGlyphs'>Mexico</text>
+<text x='349.98' y='78.31' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='22.18px' lengthAdjust='spacingAndGlyphs'>México</text>
 <text x='349.98' y='85.29' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='30.36px' lengthAdjust='spacingAndGlyphs'>Honduras</text>
-<text x='349.98' y='92.26' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='26.08px' lengthAdjust='spacingAndGlyphs'>Panama</text>
+<text x='349.98' y='92.26' style='font-size: 7.00px;fill: #0033A0; font-family: "Helvetica";' textLength='26.08px' lengthAdjust='spacingAndGlyphs'>Panamá</text>
 </g>
 </svg>
