@@ -132,7 +132,7 @@ function drawMap(map, nats) {
 
         } else {
 
-            let dir = varSelect === "regout" ? "de" : "de";
+            let dir = varSelect === "regout" ? "de" : "a";
             
             const text = (d) => {
                 if (d.properties.iso3c === geoSelect) {
@@ -140,7 +140,8 @@ function drawMap(map, nats) {
                 } else {
                     return `
                         <span class='value'>${ d3.format(",.0f")(+d.n) }</span>
-                        <br>${ varText } ${ dir } ${ d.label }
+                        <br>${ varText } ${ dir } ${ util.geosES[geoSelect] }
+                        <br>por nacionales de ${ d.label }
                     `;
                 }
             }
