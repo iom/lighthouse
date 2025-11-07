@@ -3,7 +3,7 @@ import * as util from "./util.js";
 
 export function addFormSlider(container) {
 
-    const years = ({ min: 2018, max: 2024 });
+    const years = ({ min: 2018, max: 2025 });
 
     const form = container.append("form")
         .attr("id", "form-year-slider");
@@ -125,7 +125,7 @@ export function addFormIcons(container) {
 
 export function addFormRadio(container) {
 
-    const years = [2022, 2023, 2024];
+    const years = [2022, 2023, 2024, 2025];
     
     const dropdown = container.append("form")
         .attr("id", "radio-year");
@@ -154,7 +154,7 @@ export function addFormRadio(container) {
         })
 
     // Default value
-    dropdown.select("input[value='2024']").property("checked", true);
+    dropdown.select("input[value='2025']").property("checked", true);
 }
 
 export function addFormDropdown(container, options) {
