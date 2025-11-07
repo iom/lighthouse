@@ -152,7 +152,7 @@
     }
 
     & .panel {
-        height: clamp(400px, 18.75rem + 25vw, 500px);
+        height: clamp(400px, 18.75rem + 25vw, 600px);
     }
 }
 
@@ -276,7 +276,7 @@
     }
 
     & .panel {
-        height: clamp(400px, 18.75rem + 25vw, 500px);
+        height: clamp(400px, 18.75rem + 25vw, 600px);
 
         & .control-panel {
             position: absolute;

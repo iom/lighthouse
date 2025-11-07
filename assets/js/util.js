@@ -1,7 +1,7 @@
 
 export const dim = { 
     width: 1200, 
-    height: 500,
+    height: 600,
 };
 
 export const colors = { 

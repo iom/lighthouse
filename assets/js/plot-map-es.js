@@ -67,7 +67,7 @@ function drawMap(map, nats) {
 
     let projection = d3.geoNaturalEarth1()
         .scale(190)
-        .center([xpos, 10]);
+        .center([xpos, 25]);
 
     let path = d3.geoPath().projection(projection);
 
