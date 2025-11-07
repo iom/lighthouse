@@ -603,9 +603,16 @@ p.copyright {
     }
 
     & .chart-source {
+        margin-top: .4rem;
         font-size: .65em;
         color: var(--blue3);
         align-self: start;
+    }
+
+    .chart-caption {
+        color: var(--blue3);
+        text-wrap: pretty;
+        font-size: .65em;
     }
 }
 
