@@ -141,8 +141,8 @@ function drawMap(map, nats) {
                 } else {
                     return `
                         <span class='value'>${ d3.format(",.0f")(+d.n) }</span>
-                        <br>${ varText } ${ dir } ${ util.geos[geoSelect] }<br>
-                        by ${ d.label } nationals
+                        <br>${ varText } ${ dir } ${ util.geos[geoSelect] }
+                        <br>by ${ d.label } nationals
                     `;
                 }
             }
